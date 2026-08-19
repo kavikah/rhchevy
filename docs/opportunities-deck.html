@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rick Hendrick Chevrolet Norfolk — Market Opportunities</title>
+  <style>
+    :root {
+      --navy: #0b1220;
+      --navy-2: #141d2e;
+      --gold: #c9a227;
+      --gold-2: #e8d08a;
+      --paper: #f4efe4;
+      --muted: #9aa3b5;
+      --ok: #7dcea0;
+      --warn: #e8a87c;
+      --bad: #e07a7a;
+      --line: rgba(255,255,255,.08);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      height: 100%;
+      background: var(--navy);
+      color: var(--paper);
+      font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
+      overflow: hidden;
+    }
+    .deck { height: 100%; width: 100%; }
+    .slide {
+      display: none;
+      height: 100%;
+      padding: 7vh 8vw 10vh;
+      position: relative;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide.on { display: flex; }
+    .kicker {
+      color: var(--gold);
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+    }
+    h1 { font-size: clamp(2.2rem, 4.6vw, 4.4rem); line-height: 1.08; font-weight: 700; max-width: 18ch; }
+    h2 { font-size: clamp(1.8rem, 3.4vw, 3.2rem); line-height: 1.12; font-weight: 700; max-width: 22ch; }
+    .lede { margin-top: 1.4rem; font-size: clamp(1.05rem, 1.6vw, 1.35rem); color: var(--muted); max-width: 42ch; line-height: 1.45; }
+    .meta { margin-top: 2.2rem; color: var(--gold-2); font-size: .95rem; letter-spacing: .04em; }
+    .bar {
+      position: absolute; left: 8vw; right: 8vw; bottom: 4.5vh;
+      display: flex; align-items: center; gap: 1rem; color: var(--muted); font-size: .8rem;
+    }
+    .bar .track { flex: 1; height: 2px; background: var(--line); }
+    .bar .fill { height: 2px; background: var(--gold); width: 0; }
+    .grid { display: grid; gap: 1rem; margin-top: 2rem; }
+    .grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .grid.cols-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+    .card {
+      background: var(--navy-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.25rem 1.35rem;
+    }
+    .card h3 { font-size: 1.05rem; margin-bottom: .45rem; }
+    .card p, .card li { color: var(--muted); font-size: .95rem; line-height: 1.4; }
+    .card .tag { color: var(--gold); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: .5rem; }
+    ul.plain { list-style: none; }
+    ul.plain li { padding: .55rem 0; border-bottom: 1px solid var(--line); font-size: 1.12rem; }
+    ul.plain li:last-child { border-bottom: 0; }
+    .big-num { font-size: clamp(2.4rem, 5vw, 4rem); color: var(--gold); font-weight: 700; line-height: 1; }
+    .vs { display: flex; gap: 1.2rem; align-items: stretch; margin-top: 2rem; }
+    .vs .card { flex: 1; }
+    .move { margin-top: 1.6rem; padding: 1rem 1.2rem; border-left: 3px solid var(--gold); background: rgba(201,162,39,.08); max-width: 58ch; }
+    .move strong { color: var(--gold-2); }
+    .seq { counter-reset: step; margin-top: 1.5rem; }
+    .seq li { list-style: none; display: grid; grid-template-columns: 2.4rem 1fr; gap: 1rem; align-items: start; padding: .7rem 0; border-bottom: 1px solid var(--line); }
+    .seq li::before {
+      counter-increment: step; content: counter(step);
+      color: var(--navy); background: var(--gold); width: 2rem; height: 2rem;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .9rem;
+    }
+    .dont { color: var(--bad); }
+    .do { color: var(--ok); }
+    .hint { position: absolute; right: 8vw; top: 5vh; color: var(--muted); font-size: .75rem; letter-spacing: .08em; }
+    @media (max-width: 900px) {
+      .grid.cols-2, .grid.cols-3, .grid.cols-4, .vs { grid-template-columns: 1fr; flex-direction: column; display: grid; }
+      h1, h2 { max-width: none; }
+      .slide { padding: 8vh 6vw 12vh; }
+    }
+    @media print {
+      html, body, .deck { overflow: visible; height: auto; background: #fff; color: #111; }
+      .slide { display: flex !important; page-break-after: always; min-height: 100vh; color: #111; }
+      .card { background: #f6f3ea; border-color: #ddd; }
+      .lede, .card p, .card li, .bar { color: #444; }
+      .hint { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="deck" id="deck">
+
+    <section class="slide on">
+      <div class="kicker">Rick Hendrick Chevrolet Norfolk</div>
+      <h1>Opportunities to win Hampton Roads — without building a second dealership stack.</h1>
+      <p class="lede">Service first, then sales, collision, fleet, and military. The store already captures demand. Effectiveness is lost in hygiene, SLAs, and handoffs.</p>
+      <p class="meta">Discovery brief · August 2026 · Public-web reconnaissance</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Thesis</div>
+      <h2>This is not an awareness problem.</h2>
+      <p class="lede">Google is 4.7 from about 9,500 reviews. Named advisors already get customers to pass a closer Chevy store. Capture tools already exist: Dealer Inspire, Gubagoo, Carwise/CCC, Work Truck Solutions.</p>
+      <div class="move"><strong>The opportunity</strong> is to stop leaking demand that is already in motion — then productize the advantages only this campus has.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">How to read the rooftop</div>
+      <h2>A campus of P&amp;Ls, not one funnel.</h2>
+      <div class="grid cols-4">
+        <div class="card"><div class="tag">Always on</div><h3>Service</h3><p>Highest-frequency engine. Scheduler, coupons, named advisors.</p></div>
+        <div class="card"><div class="tag">Episodic</div><h3>Sales + F&amp;I</h3><p>Silverado, Corvette, EV, used transfers, finance-gated price.</p></div>
+        <div class="card"><div class="tag">Insurance inbound</div><h3>Collision</h3><p>Only Hendrick Collision in Virginia. C8 certified. CCC already live.</p></div>
+        <div class="card"><div class="tag">B2B</div><h3>Fleet + parts</h3><p>Work Truck Solutions + a wholesale desk with no public portal.</p></div>
+      </div>
+      <p class="lede" style="margin-top:1.6rem">Cadillac sits next door. Treat the boulevard as one destination — and stop handing Chevy appointments to the sister store.</p>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Market</div>
+      <h2>Hampton Roads is a military-and-truck market on a Chevy corridor.</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Demand</h3><p>Virginia Beach shoppers, Norfolk address. NAS Norfolk, Oceana, Langley, shipyards. Pickups, HD, commercial, Corvette, EV curiosity.</p></div>
+        <div class="card"><h3>Chevy competitors</h3><p>Priority Greenbrier and Newport News. RK Virginia Beach (Express Lube). Southern Chevrolet Chesapeake.</p></div>
+        <div class="card"><h3>Not Chevy</h3><p>Cavalier is Ford/Lincoln/Mazda. Checkered Flag and Hall have no Chevy franchise here.</p></div>
+      </div>
+      <div class="move"><strong>Win condition</strong> is not “more Chevy ads.” It is own the vehicle’s life: first service, next RO, collision, equity, repurchase — especially for military households and fleets.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Do not rebuild</div>
+      <h2>The stack is already crowded.</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <div class="tag">Already occupying the slot</div>
+          <ul class="plain">
+            <li>Dealer Inspire website + GM BAC 113725</li>
+            <li>Gubagoo / Shift Digital toolbar 103241</li>
+            <li>Carwise + CCC photo estimates</li>
+            <li>Work Truck Solutions / EZOrder</li>
+            <li>KBB Instant Cash Offer + 10 Second Trade</li>
+            <li>Hendrick corporate Snowflake Customer 360</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="tag">Do not do first</div>
+          <ul class="plain">
+            <li class="dont">A second CRM</li>
+            <li class="dont">A second chatbot on the site</li>
+            <li class="dont">Blast campaigns without VIN / RO context</li>
+            <li class="dont">A bot that quotes APR or OTD from memory</li>
+            <li class="dont">Treating Hendrick Performance (Charlotte) as local</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 01 · Highest frequency</div>
+      <h2>Make service appointments mean something.</h2>
+      <p class="lede">The public already praises Will, Grace, Alannah, Molly, Alex. The 1-stars are process: tow-ins not in the system, cars sitting for weeks, “you have an appointment — wait 48 to 72 hours.”</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Confirm with honesty</h3><p>Pre-visit SMS: slot, shop load, Uber shuttle vs wait vs loaner. If the lane is full, reschedule before they drive in.</p></div>
+        <div class="card"><h3>Tow-in watchdog</h3><p>No advisor / no RO after X hours = exception queue with a customer-facing status. This is where reputation dies.</p></div>
+        <div class="card"><h3>Productize advisors</h3><p>The moat is people. Review asks, reminder copy, and MPI notes should carry the advisor name — not a generic rooftop.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 02 · Hygiene</div>
+      <h2>Stop sending Chevy demand to Cadillac.</h2>
+      <p class="lede">Local listings point Chevrolet service at the Cadillac appointment form. Nine-plus public phone numbers. Hours disagree on Sunday sales and Saturday service close.</p>
+      <div class="move"><strong>Move:</strong> one canonical Google Business Profile per department, a DID vs tracking map, and a listing audit so Hendrick local-listings UTMs cannot leak to 6222 E Virginia Beach Blvd.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 03 · Reputation</div>
+      <h2>Google is won. Yelp is abandoned.</h2>
+      <div class="vs">
+        <div class="card"><div class="tag">Gated destination</div><p class="big-num">4.7</p><p style="margin-top:.8rem">~9,506 Google reviews (Places). Service listing ~4.8 / 367. DealerRater 4.6 / 732.</p></div>
+        <div class="card"><div class="tag">Complaint sink</div><p class="big-num" style="color:var(--bad)">2.3</p><p style="margin-top:.8rem">Yelp ~165 reviews. Apple Maps surfaces this. Same store, different story.</p></div>
+      </div>
+      <div class="move"><strong>Move:</strong> claim the Birdeye service profile, reply on Yelp to wait-time and price-transparency themes, and stop shared-queue replies that thank people for visiting Land Rover Charlotte.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 04 · Local monopoly copy</div>
+      <h2>No Vets Left Behind is the best unused asset on the site.</h2>
+      <p class="lede">The page is live: dealer overlay on GM Military, VIP appointment, top-dollar trade, <strong style="color:var(--gold-2)">5% off service and parts for the vehicle’s life</strong>. Bases are not named on the page. Footer does not even link Facebook.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3>Name the bases</h3><p>NAS Norfolk, Oceana, Langley-Eustis, Fort Story, shipyards — the market already knows; the page pretends it is generic.</p></div>
+        <div class="card"><h3>Wire the desk</h3><p>F&amp;I must stack dealer overlay vs GM Go Code vs first-responder vs college-grad without promising two things that exclude each other.</p></div>
+        <div class="card"><h3>Keep them in service</h3><p>The 5% lifetime parts/service offer is a retention product. Remind at oil-life, not only at delivery.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 05 · Lifetime value</div>
+      <h2>Turn MPI and the wait lounge into the next sale.</h2>
+      <p class="lede">Every service template already pushes 10 Second Trade. Collision reviews already show total-loss customers buying replacement vehicles on the same lot.</p>
+      <div class="grid cols-2">
+        <div class="card"><h3>Service → equity</h3><p>Yellow/red MPI + high miles + military PCS window → BDC with the advisor’s note, not a cold specials blast.</p></div>
+        <div class="card"><h3>Collision → replacement</h3><p>Photo estimate + total loss should create a sales lead with VIN, carrier, and rental need — CCC already has the intake; do not duplicate it.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 06 · Used and marketplaces</div>
+      <h2>A ~500-unit lot is leaking on data quality, not on inventory.</h2>
+      <p class="lede">CarGurus ~491, iSeeCars 513. Mixed-make Hendrick transfers, not a Chevy-only lot. Only 64% of listings have valid price + miles + photo vs 75% average. Transfer units can show Concord or Durham while wearing a Norfolk header.</p>
+      <div class="move"><strong>Move:</strong> fix the feed (HomeNet completeness), disclose “this VIN is at another Hendrick store + ~$300 + delay,” and stop letting iSeeCars/CarGurus tax conversion before a human ever talks.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 07 · Price honesty</div>
+      <h2>Do not compete with Valvoline on oil. Do not quote dead APR.</h2>
+      <div class="grid cols-2">
+        <div class="card"><div class="tag">Service</div><h3>They already admit $25–$50 oil</h3><p>Dealer menus sit ~$90–$120. RK has Express Lube. Valvoline is on the same boulevard. Lead with free brake, alignment, and battery inspections — the MPVI funnel — not conventional oil.</p></div>
+        <div class="card"><div class="tag">Sales</div><h3>Hendrick Price is finance-gated</h3><p>$1,000 online discount requires dealer financing. Doc fees show as $799 and $899. Indexed 0% APR dates have already aged. A bot that recites banners is a compliance incident.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 08 · Invisible B2B</div>
+      <h2>Fleet and wholesale already exist. The internet cannot find them.</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Two fleet phones</h3><p>(757) 300-1588 and (757) 760-8103. Work Truck Solutions, EZOrder, Section 179, named Truck Pros. Map which number owns the lead.</p></div>
+        <div class="card"><h3>Wholesale parts</h3><p>A wholesale desk is real. No public portal. Collision next door should pull through parts without a phone tag.</p></div>
+        <div class="card"><h3>C8 collision</h3><p>Rare Eastern Virginia certification, no dedicated C8 repair form. Qualify aluminum/carbon work vs PDR and route to collision or Tyler.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 09 · Trade</div>
+      <h2>Show the number before the contract.</h2>
+      <p class="lede">10 Second Trade and KBB Instant Cash Offer both exist. DealerRater already records the complaint: trade value appeared after paperwork was drawn. That is a process choice, not a missing widget.</p>
+      <div class="move"><strong>Move:</strong> VIN / plate / miles → a range by SMS → appointment. Range on the table before F&amp;I. Buy-your-car with no purchase required is already group copy — make it operational.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Opportunity 10 · Physical media</div>
+      <h2>Free chargers and Uber shuttle are marketing. Treat them that way.</h2>
+      <p class="lede">PlugShare loves the free charge and hates blocked stalls and dead CCS. Shuttle is in the appointment form and in reviews — Priority advertises lounge/kids; Southern advertises Uber/Lyft. Hendrick has the amenity and hides it.</p>
+      <div class="move"><strong>Move:</strong> GBP attributes for wait vs shuttle vs loaner once policy is confirmed. Charging stall status is an ops ticket that currently writes 1-star EV comments.</div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Sequence</div>
+      <h2>Effectiveness, in order.</h2>
+      <ol class="seq">
+        <li><div><strong>Listing and phone hygiene</strong><br /><span style="color:var(--muted)">Cadillac leak, GBP split, tracking map. Attribution before any model.</span></div></li>
+        <li><div><strong>Service SLAs</strong><br /><span style="color:var(--muted)">Confirmations, no-shows, tow-in watchdog. Protect the 4.7.</span></div></li>
+        <li><div><strong>Marketplace completeness + trade-before-paperwork</strong><br /><span style="color:var(--muted)">Stop taxing used conversion on CarGurus/iSeeCars.</span></div></li>
+        <li><div><strong>Military desk + 5% lifetime service</strong><br /><span style="color:var(--muted)">Productize No Vets Left Behind. Name the bases.</span></div></li>
+        <li><div><strong>Handoffs</strong><br /><span style="color:var(--muted)">MPI → sales. Collision total-loss → sales. Orchestrate CCC and Gubagoo; do not replace them.</span></div></li>
+      </ol>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Later · after the vendor map</div>
+      <h2>One identity per customer and VIN.</h2>
+      <p class="lede">Then — and only then — an overlay that sits on Hendrick data: intent (service vs sales vs collision vs fleet), rooftop-correct review replies, source-of-truth attribution, next-best-action with RO context.</p>
+      <div class="grid cols-2" style="margin-top:1.6rem">
+        <div class="card"><h3 class="do">On top of the stack</h3><p>Dealer Inspire, Gubagoo, CCC, Work Truck Solutions, Snowflake Customer 360.</p></div>
+        <div class="card"><h3 class="dont">Not a second brain</h3><p>No parallel CRM. No second chat. No specials blaster that cannot see the last RO.</p></div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="kicker">Close</div>
+      <h1>Own the vehicle’s life in Hampton Roads.</h1>
+      <p class="lede">The advisors already create loyalty. Collision is already certified for the C8. Military copy is already on the site. Effectiveness is the gap between those assets and the leaks around them.</p>
+      <p class="meta">Detail: rooftop-poster.md · marketing-leads-map.md · Public sources, August 2026</p>
+    </section>
+
+  </div>
+  <div class="hint">← → or click · P to print</div>
+  <div class="bar"><span id="pos">1</span><div class="track"><div class="fill" id="fill"></div></div><span>Rick Hendrick Chevrolet Norfolk</span></div>
+  <script>
+    const slides = [...document.querySelectorAll(".slide")];
+    let i = 0;
+    const pos = document.getElementById("pos");
+    const fill = document.getElementById("fill");
+    function show(n) {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle("on", idx === i));
+      pos.textContent = (i + 1) + " / " + slides.length;
+      fill.style.width = ((i + 1) / slides.length * 100) + "%";
+    }
+    document.addEventListener("keydown", (e) => {
+      if (["ArrowRight", "PageDown", " ", "Enter"].includes(e.key)) { e.preventDefault(); show(i + 1); }
+      if (["ArrowLeft", "PageUp", "Backspace"].includes(e.key)) { e.preventDefault(); show(i - 1); }
+      if (e.key === "Home") show(0);
+      if (e.key === "End") show(slides.length - 1);
+    });
+    document.getElementById("deck").addEventListener("click", (e) => {
+      if (e.target.closest("a")) return;
+      show(e.clientX > innerWidth / 2 ? i + 1 : i - 1);
+    });
+    show(0);
+  </script>
+</body>
+</html>
