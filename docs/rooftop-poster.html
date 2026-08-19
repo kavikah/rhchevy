@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rooftop Poster — Rick Hendrick Chevrolet Norfolk</title>
+  <link rel="stylesheet" href="assets/report.css" />
+  <style>
+    .poster-hero { margin-bottom: 1.6rem; }
+    .poster-hero h1 { margin-bottom: .5rem; }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span class="brand">RH Chevy Norfolk</span>
+    <a href="marketing-leads-map.html">Lead map</a>
+    <a class="on" href="rooftop-poster.html">Rooftop poster</a>
+    <a href="opportunities-deck.html">Opportunities deck</a>
+  </div>
+  <main class="wrap">
+    <div class="poster-hero">
+      <div class="kicker">One-screen demand map · August 2026</div>
+      <h1>Rooftop poster — Rick Hendrick Chevrolet Norfolk</h1>
+      <p class="lede">How demand hits the Virginia Beach Blvd campus. Full reconnaissance is in the <a href="marketing-leads-map.html">lead map</a>. Present the opportunities in the <a href="opportunities-deck.html">slideshow</a>.</p>
+    </div>
+
+    <pre class="mermaid">
+flowchart TB
+  subgraph GEO ["Market: Hampton Roads"]
+    VB["Virginia Beach demand"]
+    NF["Norfolk rooftop · 6252 E VA Beach Blvd"]
+    MIL["NAS Norfolk · Oceana · Langley · shipyards"]
+    COMP["Priority Greenbrier + Newport News · RK VB · Southern Chevy"]
+  end
+
+  VB --> NF
+  MIL --> NF
+  COMP -.->|"steal ROs and sales"| NF
+
+  subgraph FIXED ["Fixed ops — start here"]
+    APPT["serviceapptform"]
+    COUP["serviceandpartsspecials"]
+    SEO["service-and-parts-tips SEO"]
+    ADV["Named advisors = moat"]
+    TOW["Tow-in / no-appt = 1-star risk"]
+  end
+
+  subgraph VAR ["Variable ops"]
+    NEW["New: Silverado Tahoe Equinox Corvette EV"]
+    USED["Used: ~500 mixed-make units on 3P sites"]
+    TRADE["KBB ICO + Gubagoo 10-second trade"]
+    FI["Credit app · Accelerate · GM Financial · No Vets Left Behind"]
+  end
+
+  subgraph ADJ ["Adjacent P&Ls"]
+    COLL["Collision · Carwise/CCC photo estimate · C8 cert · Sunbit"]
+    FLEET["Commercial · Work Truck Solutions · EZOrder · 300-1588 / 760-8103"]
+    PARTS["GM OE / ACDelco counter"]
+    EV["Free public L2 charge · ops inconsistency"]
+  end
+
+  NF --> FIXED
+  NF --> VAR
+  NF --> ADJ
+
+  APPT --> ADV
+  COUP --> APPT
+  SEO --> APPT
+  TOW --> ADV
+  ADV -->|"MPI / wait lounge"| NEW
+  COLL -->|"total loss"| NEW
+  TRADE --> FI
+  NEW --> APPT
+    </pre>
+
+    <h2>Capture objects to wire first</h2>
+    <table>
+      <thead>
+        <tr><th>Priority</th><th>Object</th><th>Why</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td><code>/service/serviceapptform/</code></td><td>Highest-frequency lead; corporate UTM already exists</td></tr>
+        <tr><td>2</td><td>Service Google/Waze number <code>(757) 544-9732</code> vs site pool <code>(757) 271-1678</code></td><td>Attribution is currently soup</td></tr>
+        <tr><td>3</td><td>Cadillac form leak on Chevy local listings</td><td>Demand handed to sister store</td></tr>
+        <tr><td>4</td><td>Gubagoo chat + 10-second trade</td><td>Occupies the on-site conversation slot</td></tr>
+        <tr><td>5</td><td>Collision Carwise/CCC photo estimate + <code>(757) 455-4505</code></td><td>Insurance inbound; Shop Assistant already exists — orchestrate, don’t duplicate</td></tr>
+        <tr><td>6</td><td>CarGurus / iSeeCars listing completeness</td><td>64% valid price+photo+miles</td></tr>
+        <tr><td>7</td><td>Work Truck Solutions EZOrder + two fleet phones</td><td>B2B is a different CRM object</td></tr>
+        <tr><td>8</td><td>Marketplace + DealerRater + GBP replies</td><td>Shared-queue replies already misfire</td></tr>
+        <tr><td>9</td><td>Google 4.7 / 9,506 vs Yelp ~2.3 / 165</td><td>Review gating is working for Google and failing on Yelp</td></tr>
+        <tr><td>10</td><td>Wholesale parts + GM BAC <code>113725</code> (gmparts / accessories)</td><td>Invisible B2B vs OEM e-comm</td></tr>
+        <tr><td>11</td><td>Get E-Price / Fast Pass / <code>/bad-credit-car-loans/</code> vs live vs expired APR</td><td>Finance-contingent price = compliance risk</td></tr>
+        <tr><td>12</td><td><code>/military-discount-program/</code> (“No Vets Left Behind” + 5% service/parts for life)</td><td>Highest-fit local overlay; bases not named on the page</td></tr>
+      </tbody>
+    </table>
+
+    <div class="stop">
+      <strong>Do not build yet.</strong> A second CRM, a second chatbot, or blast campaigns. Hendrick already has Dealer Inspire, Gubagoo, and a corporate Snowflake Customer 360. The store needs an operating picture on top of those, starting with Service SLAs and listing hygiene.
+    </div>
+    <footer class="note">Converted from rooftop-poster.md. Diagrams render with Mermaid in the browser.</footer>
+  </main>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "dark",
+      securityLevel: "loose",
+      themeVariables: {
+        primaryColor: "#141d2e",
+        primaryTextColor: "#f4efe4",
+        primaryBorderColor: "#c9a227",
+        lineColor: "#c9a227",
+        secondaryColor: "#1c2740",
+        tertiaryColor: "#0b1220"
+      }
+    });
+  </script>
+</body>
+</html>

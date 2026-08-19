@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Marketing &amp; Lead Generation Map — Rick Hendrick Chevrolet Norfolk</title>
+  <link rel="stylesheet" href="assets/report.css" />
+</head>
+<body>
+  <div class="top">
+    <span class="brand">RH Chevy Norfolk</span>
+    <a class="on" href="marketing-leads-map.html">Lead map</a>
+    <a href="rooftop-poster.html">Rooftop poster</a>
+    <a href="opportunities-deck.html">Opportunities deck</a>
+  </div>
+  <main class="wrap">
+<div class="kicker">Discovery · August 2026</div>
+<h1>Rick Hendrick Chevrolet Norfolk — Marketing &amp; Lead Generation Map</h1>
+<p><strong>Purpose:</strong> Big-picture view of how this rooftop generates, captures, and loses demand — starting with Service — before any AI backend or marketing system is built.</p>
+<p><strong>Store:</strong> Rick Hendrick Chevrolet Norfolk  </p>
+<p><strong>Legal:</strong> Colonial Chevrolet Company, LP d/b/a Rick Hendrick Chevrolet-Norfolk  </p>
+<p><strong>Address:</strong> 6252 E. Virginia Beach Blvd, Norfolk, VA 23502 (Virginia Beach Blvd corridor; serves Virginia Beach, Chesapeake, Suffolk, Portsmouth, Hampton, Newport News)  </p>
+<p><strong>Owner:</strong> Hendrick Automotive Group (part of the group since 1994; store founded 1930)  </p>
+<p><strong>Campus:</strong> Chevrolet + co-located Hendrick Collision + adjacent Rick Hendrick Cadillac Norfolk (6222 E. Virginia Beach Blvd)</p>
+<p><strong>Method:</strong> Public-web reconnaissance. The dealer site (<code>rickhendrickchevroletnorfolk.com</code>, Dealer Inspire / Cloudflare) blocked automated fetches. Findings come from HendrickCars.com, commercial microsite, DealerRater, CarGurus, iSeeCars, PlugShare, collision pages, SEO content snippets, and aggregator listings. Items not verified first-party are marked <strong>unconfirmed</strong>.</p>
+<p><strong>As of:</strong> August 2026</p>
+
+<nav class="toc">
+  <a href="#1-the-business-in-one-picture">1. Business in one picture</a>
+  <a href="#2-start-here-service-department-fixed-ops">2. Service department</a>
+  <a href="#3-recurse-the-rest-of-the-rooftop">3. Rest of the rooftop</a>
+  <a href="#4-full-lead-generation-ecosystem">4. Lead-generation ecosystem</a>
+  <a href="#5-phone-listing-hygiene-attribution-problem">5. Phone &amp; listing hygiene</a>
+  <a href="#6-customer-lifetime-the-real-unit-of-marketing">6. Customer lifetime</a>
+  <a href="#7-market-competitive-frame">7. Market &amp; competitors</a>
+  <a href="#8-tech-stack-known-vs-assumed">8. Tech stack</a>
+  <a href="#9-where-the-picture-is-still-blind">9. Still blind</a>
+  <a href="#10-what-to-build-later-not-now-ai-system-overlay">10. What to build later</a>
+  <a href="#11-source-list">11. Sources</a>
+  <a href="#12-how-to-read-this-before-building">12. How to read this</a>
+</nav>
+<h2 id="1-the-business-in-one-picture">1. The business in one picture</h2>
+<p>This is not a single funnel. It is a <strong>campus of P&amp;L centers</strong> that share a brand, a lot, and a customer lifetime — but use different phones, forms, hours, and vendors.</p>
+<pre class="mermaid">
+flowchart TB
+  subgraph campus ["Hendrick Norfolk Campus — VA Beach Blvd"]
+    CHEVY["Rick Hendrick Chevrolet Norfolk<br/>6252 E Virginia Beach Blvd"]
+    COLL["Hendrick Collision Norfolk<br/>same address · only Hendrick collision in VA"]
+    CADDY["Rick Hendrick Cadillac Norfolk<br/>6222 E Virginia Beach Blvd"]
+  end
+
+  subgraph chevy_pl ["Chevrolet P&L centers"]
+    NEW["New vehicle sales<br/>Silverado / Tahoe / Equinox / Corvette / EV"]
+    USED["Used / CPO / Buy-your-car<br/>~490–513 listings on 3P sites"]
+    FI["Finance & Insurance<br/>GM Financial · credit app · F&I products"]
+    SVC["Service / Fixed Ops<br/>oil · tires · brakes · warranty · inspection"]
+    PARTS["Parts counter<br/>GM OE + ACDelco + DIY/wholesale"]
+    FLEET["Commercial / Fleet<br/>trucks · vans · upfit · B2B"]
+    EV["EV charging + EV sales<br/>free public L2 · Bolt/Blazer/Silverado/Equinox EV"]
+  end
+
+  CHEVY --> NEW & USED & FI & SVC & PARTS & FLEET & EV
+  CHEVY --- COLL
+  CHEVY --- CADDY
+  SVC -.->|"RO upsell / wait-lounge handoff"| NEW
+  COLL -.->|"total-loss / rental / replacement"| NEW
+  FLEET -.->|"downtime service"| SVC
+  NEW -.->|"first service + CSI"| SVC
+</pre>
+<p><strong>Implication for AI:</strong> One “marketing system” that only scores website sales leads will miss the highest-frequency, highest-retention engine (Service) and the highest-ticket adjacent capture (Collision + Fleet).</p>
+<h2 id="2-start-here-service-department-fixed-ops">2. Start here: Service department (fixed ops)</h2>
+<p>Service is the densest, most repeatable lead machine on the rooftop. It is also the most fragmented in public listings.</p>
+<h3 id="2-1-identity">2.1 Identity</h3>
+<table><thead><tr><th>Item</th><th>Observed</th><th>Confidence</th></tr></thead><tbody>
+<tr><td>Location</td><td>6252 E. Virginia Beach Blvd, Norfolk, VA 23502</td><td>High</td></tr>
+<tr><td>Hours</td><td>Mon–Fri 7:30a–6:00p; Sat <strong>8:00a–4:00p or 5:00p</strong> (listings conflict); Sun closed</td><td>Medium — Saturday close not confirmed on a live dealer hours page</td></tr>
+<tr><td>Amenities on the appointment form</td><td>Own ride, <strong>wait in customer lounge</strong>, or <strong>shuttle</strong></td><td>High (Wayback of <code>serviceapptform</code>, Dec 2024)</td></tr>
+<tr><td>Loaners / pickup-dropoff</td><td>Hendrick Virginia <em>group</em> page only</td><td><strong>Unknown at this rooftop</strong></td></tr>
+<tr><td>Shuttle</td><td>Form option + reviews describing <strong>Uber shuttle</strong> (not a branded van)</td><td>High that it exists at least sometimes</td></tr>
+<tr><td>Quick lube</td><td>PlugShare users reference a “Quick Lube” sign at the service center</td><td>Medium</td></tr>
+<tr><td>Staff named in reviews</td><td>Advisors: Will, Grace, Alannah, Molly, Alex, Allan Herrera, Aaron</td><td>Medium (public reviews, not org chart)</td></tr>
+</tbody></table>
+<h3 id="2-2-capture-points-the-actual-leads">2.2 Capture points (the actual “leads”)</h3>
+<pre class="mermaid">
+flowchart LR
+  subgraph triggers ["Demand triggers"]
+    T1["Mileage / oil life / CEL"]
+    T2["VA state inspection"]
+    T3["Warranty / recall / OnStar"]
+    T4["Coupon / SEO article"]
+    T5["Tow-in / breakdown"]
+    T6["Fleet downtime"]
+  end
+
+  subgraph channels ["Channels"]
+    WEB["Dealer site"]
+    PHONE["Call tracking numbers"]
+    CORP["HendrickCars.com"]
+    SEO["Service-and-parts-tips blog"]
+    GBP["Google / Maps / Waze"]
+    CHAT["Gubagoo chat / text"]
+    WALK["Drive-up / no appointment"]
+  end
+
+  subgraph capture ["Capture objects"]
+    FORM["/service/serviceapptform/"]
+    ALIAS["/schedule-service/"]
+    CONTACT["/service/contact-service/"]
+    SPECIALS["/service/serviceandpartsspecials/"]
+    CALL["Phone → BDC / advisor"]
+  end
+
+  subgraph ops ["Store operations"]
+    RO["Repair order in DMS"]
+    CSI["CSI / review ask"]
+    RET["Next-appointment / reminder"]
+    XSELL["Service → sales handoff"]
+  end
+
+  triggers --> channels --> capture --> ops
+</pre>
+<p><strong>Primary URLs</strong></p>
+<ul class="tight">
+<li>Appointment form: <a href="https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/">https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/</a></li>
+<li>Alias: <code>/schedule-service/</code> and <code>/service/schedule-service/</code></li>
+<li>Service home: <code>/service/</code></li>
+<li>Contact service: <code>/service/contact-service/</code> (name, email, phone, message, Referral ID, reCAPTCHA — Apr 2025 archive)</li>
+<li>Coupons: <code>/service/serviceandpartsspecials/</code> — <strong>print coupon, no alphanumeric codes</strong></li>
+<li>SEO hub: <code>/service/service-and-parts-tips/</code> (oil-change price, how to check oil, EV jump-start, Chevy key fob, etc.)</li>
+<li>Corporate referral: HendrickCars VA service page links the same form with  </li>
+</ul>
+<p>  <code>utm_source=hendrickcars&amp;utm_medium=referral&amp;utm_campaign=service</code></p>
+<ul class="tight">
+<li>Service financing (group): Ally via HendrickCars</li>
+<li>Legacy hostname: <code>colonialchevroletnorfolk.com</code> serves the same Dealer Inspire site</li>
+</ul>
+<p><strong>Scheduler UX (Wayback Dec 2024):</strong> returning customer lookup by phone/email <strong>or Google account sign-in</strong> → new-customer year/make/model → services or free-text → transportation (ride / lounge / shuttle) → date/time slot. Capacity engine (Xtime vs CDK vs DI native) is <strong>not confirmed</strong>.</p>
+<p><strong>Services sold (from HendrickCars + SEO pages + reviews)</strong></p>
+<p>Oil/filter (conventional, synthetic, OLM; diesel/synth called out as higher), tire rotation, brakes, batteries, alignments, diagnostics, recalls/software, factory scheduled maintenance, VA state inspection, HVAC, suspension, transmission, coolant, fuel injector, cabin filter, wipers, Corvette (including ZR1) work, all-makes copy, fleet/commercial priority scheduling.</p>
+<p><strong>Typical coupon menu (Wayback <code>/service/</code> 16 Oct 2025 — prices rotate)</strong></p>
+<ul class="tight">
+<li>Evergreen: <strong>free</strong> battery test, <strong>free</strong> brake inspection, <strong>free</strong> alignment check with any service</li>
+<li>8-qt ACDelco dexos1 full synthetic + rotation <strong>$119.95</strong>; lube/oil/filter <strong>$89.95</strong> (Apr 2025 oil-change page)</li>
+<li>Tire rotation + MPVI <strong>$39.95</strong> (rotation-only had been <strong>$21.95</strong>)</li>
+<li>Fuel injector <strong>$259.95</strong>; power steering from <strong>$179.95</strong>; transmission from <strong>$349</strong>; cabin filter <strong>$89.95</strong></li>
+<li>GM/ACDelco rebates via <a href="https://www.mycertifiedservicerebates.com/">mycertifiedservicerebates.com</a> (Visa gift card; national dates, not store codes)</li>
+<li>SEO copy cites Chesapeake oil at <strong>$25–$50</strong>, then funnels into the $90–$120 dealer menu — they know the QSR price gap</li>
+</ul>
+<h3 id="2-3-service-customer-journey">2.3 Service customer journey</h3>
+<pre class="mermaid">
+sequenceDiagram
+  actor C as Owner / driver
+  participant G as Google / coupon / OnStar
+  participant W as Dealer Inspire site
+  participant F as serviceapptform
+  participant P as Phone / advisor
+  participant DMS as DMS / dispatcher
+  participant Tech as Technician
+  participant CSI as Review / CSI
+
+  C->>G: "oil change Norfolk" / CEL / inspection due
+  G->>W: Organic or Maps click
+  W->>F: Schedule Service CTA (sticky on every page)
+  F->>DMS: Appointment request (assumed)
+  C->>P: Or call tracking number
+  P->>DMS: Walk-in / tow-in / no-appt
+  DMS->>Tech: Dispatch RO
+  Tech->>P: MPI findings / upsell
+  P->>C: Approve work / wait / Uber / loaner
+  P->>CSI: "How did we do?"
+  CSI->>C: Google / DealerRater ask
+  Note over P,C: Retention = next appt on the RO + SMS/email reminder
+  Note over P,C: Conversion = wait-lounge / MPI conversation into sales or collision
+</pre>
+<h3 id="2-4-what-service-reviews-actually-say">2.4 What service reviews actually say</h3>
+<p><strong>Strengths (repeatable):</strong> advisor communication (named people), Corvette competence, Uber shuttle, willingness to take no-appointment emergencies, warranty battery work even when the part was bought elsewhere.</p>
+<p><strong>Failures (repeatable, high-severity):</strong> vehicles sitting days/weeks after tow-in, RO not in the system, aggressive estimates vs. simple corrosion cleanup, missed appointment dates, poor callback. These are <strong>process + CRM</strong> problems, not awareness problems.</p>
+<p><strong>Reputation split</strong></p>
+<table><thead><tr><th>Surface</th><th>Score</th><th>Volume</th><th>Role</th></tr></thead><tbody>
+<tr><td>Google (sales GBP, via Places)</td><td><strong>4.7</strong></td><td><strong>9,506</strong></td><td>Primary Hendrick CSI destination; supports “#1 Google Rated” claim</td></tr>
+<tr><td>Birdeye scrape of <strong>Google service</strong> listing</td><td><strong>4.8</strong></td><td><strong>367</strong></td><td><a href="https://reviews.birdeye.com/rick-hendrick-chevrolet-norfolk-service-167694268811493">Unclaimed Birdeye profile</a></td></tr>
+<tr><td>DealerRater</td><td>4.6</td><td>732</td><td>Sales + some service; Cars.com syndicates this</td></tr>
+<tr><td>Collision GBP</td><td>~4.0</td><td>~467</td><td>Separate brand / separate ask</td></tr>
+<tr><td>Yelp</td><td><strong>~2.3</strong></td><td><strong>165</strong></td><td>Untreated complaint sink (Apple Maps surfaces this)</td></tr>
+</tbody></table>
+<p>Service-only Google volume is <strong>not</strong> cleanly isolated from the sales GBP. Yelp reviews already include the failure mode “I had an appointment and was told 48–72 hours before they could look at the car.” That is a scheduling-honesty problem, not an awareness problem.</p>
+<h3 id="2-5-service-competitive-set-hampton-roads">2.5 Service competitive set (Hampton Roads)</h3>
+<table><thead><tr><th>Competitor</th><th>Why they steal ROs</th></tr></thead><tbody>
+<tr><td><a href="https://www.prioritychevrolet.com/">Priority Chevrolet Greenbrier</a> (Chesapeake)</td><td>Same GM certified-service playbook; Sat service later than Hendrick on some listings; lounge/WiFi/kids area advertised; explicit coupon codes on oil</td></tr>
+<tr><td><a href="https://www.rkchevrolet.com/">RK Chevrolet</a> (Virginia Beach)</td><td>Geographic steal for VB/Oceanfront; <strong>RK Express Lube</strong>; night drop; shuttle (Mon–Fri, ~10 miles)</td></tr>
+<tr><td><a href="https://www.southernchevroletrocks.com/">Southern Chevrolet</a> (Chesapeake)</td><td><strong>Free Uber/Lyft within 10 miles</strong> — same amenity Hendrick customers already praise</td></tr>
+<tr><td><a href="https://www.dukeauto.com/service/index.htm">Duke Chevrolet GMC</a> (Suffolk)</td><td>Western Tidewater Chevy+GMC alternative</td></tr>
+<tr><td>Jiffy Lube / Take 5 / Firestone / Pep Boys / <strong>Valvoline at 5101 Virginia Beach Blvd</strong></td><td>Price + no-appt convenience; Valvoline is in the same neighborhood</td></tr>
+<tr><td>Independents on the same boulevard</td><td>Mack&#x27;s, Terry&#x27;s, NAPA, Crash Champions — cheaper / faster for out-of-warranty</td></tr>
+<tr><td>Other Chevy rooftops</td><td>Customers explicitly say they pass a closer Chevy store because Hendrick advisors are better — <strong>advisor brand is the moat</strong></td></tr>
+</tbody></table>
+<h3 id="2-6-service-specific-leaks-fix-before-buying-more-ads">2.6 Service-specific leaks (fix before buying more ads)</h3>
+<ol class="tight">
+<li><strong>Wrong destination URL on local listings.</strong> CarHQ (and likely other scrapers) send “Rick Hendrick Chevrolet Norfolk Service” to the <strong>Cadillac</strong> appointment form:  </li>
+</ol>
+<p>   <code>rickhendrickcadillacnorfolk.com/service/serviceapptform/?utm_source=weblistings&amp;utm_medium=organic&amp;utm_campaign=hendricklocallistings</code>  </p>
+<p>   Chevy demand is being handed to the sister store.</p>
+<ol class="tight">
+<li><strong>Phone number sprawl.</strong> Service is advertised as <code>(757) 271-1678</code>, <code>(757) 544-9732</code>, <code>(855) 608-4343</code>, plus body/fleet numbers in the same footer. Attribution and Google Business hygiene are broken.</li>
+<li><strong>Sticky CTAs fight each other.</strong> Every page footer pushes <strong>Schedule Service</strong> and <strong>10 Second Trade</strong> equally — good for lifetime value, noisy for intent.</li>
+<li><strong>Tow-in / no-appt is a lead class with no public SLA.</strong> That is where 1-star service reviews are born.</li>
+</ol>
+<h2 id="3-recurse-the-rest-of-the-rooftop">3. Recurse: the rest of the rooftop</h2>
+<h3 id="3-1-new-vehicle-sales">3.1 New vehicle sales</h3>
+<p><strong>Positioning:</strong> “#1 Google Rated Chevy Dealership in Norfolk”; “#1 Corvette Dealer in Virginia”; Corvette specialist <strong>Tyler Sellers</strong> (page) / <strong>Tyler Duncan</strong> (reviews). Homepage IA includes Trucks, Electric, SUVs, Performance, Commercial.</p>
+<p><strong>Hero products (HendrickCars + site IA):</strong> Silverado 1500/HD, Tahoe, Suburban, Equinox, Traverse, Colorado, Corvette C8, Camaro (research pages still live), EV trio (Silverado EV, Blazer EV, Equinox EV).</p>
+<p><strong>Capture</strong></p>
+<table><thead><tr><th>Object</th><th>URL / channel</th></tr></thead><tbody>
+<tr><td>VDP / SRP</td><td><code>/new-vehicles/</code> — photos via <strong>HomeNet</strong>; sticky <strong>Silverados</strong> filter</td></tr>
+<tr><td>Custom/lifted trucks</td><td><code>/custom-chevy-trucks-norfolk-va/</code>, <code>/custom-lifted-trucks/</code></td></tr>
+<tr><td>New specials</td><td><code>/new-vehicles/new-vehicle-specials/</code></td></tr>
+<tr><td>Get E-Price</td><td>Modal on VDPs: name, email, phone, message, Referral ID, reCAPTCHA</td></tr>
+<tr><td>Hendrick Price</td><td>Online price often requires <strong>dealer-arranged financing</strong> (<strong>$1,000</strong> discount on used VDPs)</td></tr>
+<tr><td>Test drive</td><td>Gravity Forms (name/email/phone/zip, daypart)</td></tr>
+<tr><td>Fast Pass</td><td><code>/hendrick-fast-pass/</code></td></tr>
+<tr><td>Chat / specials tray</td><td>Gubagoo (<code>cdn.gubagoo.io</code>) + “Start Chat”</td></tr>
+<tr><td>Video intro</td><td>DealerRater: Brady Roundtree after a web hit</td></tr>
+</tbody></table>
+<p><strong>Offer hygiene:</strong> homepage carousels (Aug 2026) still run <strong>GM national co-op art</strong> (Silverado 0% / 90-day deferral, Equinox 3.9% APR, Trailblazer cash, Certified Service summer rebates) with take-delivery-by <strong>8/31/26</strong>. Older indexes also showed <strong>8/3/26</strong>. Blogs still show <strong>2025</strong> APR legalese. <strong>Expiry must be read from the live disclaimer, not from memory.</strong></p>
+<p><strong>Hours conflict:</strong> HendrickCars = Mon–Sat 9a–8p, <strong>Sunday closed</strong>. Dealer/Cars.com Silverado pages = Sunday <strong>12p–6p</strong>. Commercial = last Sunday of month. Confirm before publishing.</p>
+<h3 id="3-2-used-cpo-buy-your-car">3.2 Used / CPO / buy-your-car</h3>
+<p>Public third-party inventory is large and mixed-make (not a Chevy-only used lot):</p>
+<ul class="tight">
+<li>CarGurus: <strong>491 cars</strong> · DealerRater inventory <strong>488</strong> · iSeeCars: <strong>513 cars</strong>, avg price ~$34k, avg miles ~52.6k, <strong>3.5 / 5</strong> ops score. Only <strong>64%</strong> of listings have valid price + miles + photo vs 75% average — a <strong>marketplace conversion leak</strong>.</li>
+<li>Autotrader dealer pages exist (<code>100009</code> and <code>64594</code>) but were unavailable to fetch.</li>
+<li>TrueCar listings <strong>do</strong> appear for this store (e.g. new Trax).</li>
+<li>AutosToday: <strong>350</strong> cars (stale/incomplete scrape).</li>
+<li><strong>New vs used vs CPO split: unknown.</strong></li>
+</ul>
+<p>CPO SRP: <code>/used-vehicles/certified-pre-owned-vehicles/</code>  </p>
+<p>Budget: <code>/budget-buys/</code> (under $15k)</p>
+<p>Two cert layers on used VDPs: <strong>Chevrolet CPO</strong> and in-house <strong>Hendrick Certified</strong> (168-point, 12/12 high-tech, <strong>10yr/100k powertrain</strong>, roadside — shown even on non-Chevy, e.g. Ford Explorer). Many units are <strong>Hendrick Transfer</strong> from other rooftops (<strong>~$300 fee</strong>; some VDPs show Concord/Durham, NC).</p>
+<p>Used specials: <code>/used-vehicles/used-vehicle-specials/</code>  </p>
+<p>Trade: <code>/value-your-trade/</code> branded <strong>“10 Second Trade”</strong>. HendrickCars: they buy all makes/models with no purchase required. Reviews complain trade value appears <strong>after</strong> paperwork — a conversion leak.</p>
+<h3 id="3-3-finance-insurance">3.3 Finance &amp; insurance</h3>
+<table><thead><tr><th>Object</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Credit app</td><td><code>/finance/apply-for-financing/</code> + homepage “Get Pre-Approved in Seconds”</td></tr>
+<tr><td>Bad credit</td><td>Dedicated page <code>/bad-credit-car-loans/</code> (BK, repo, late pays — opposite funnel from 0% APR)</td></tr>
+<tr><td>Finance SEO hub</td><td><code>/finance/car-buying-tips/</code></td></tr>
+<tr><td>Captive</td><td>GM Financial required on advertised 0% / deferral</td></tr>
+<tr><td>Military / first responder / college</td><td>Dedicated retail pages: <a href="https://www.rickhendrickchevroletnorfolk.com/military-discount-program/"><code>/military-discount-program/</code></a> (“<strong>No Vets Left Behind</strong>” — dealer overlay + GM Go Code/ID.me; <strong>5% off service &amp; parts for the vehicle’s life</strong>; VIP appointment; DD214/Veteran ID). Also <a href="https://www.rickhendrickchevroletnorfolk.com/first-responder-discount/"><code>/first-responder-discount/</code></a>. College-grad page exists in the sitemap. Bases are a market reality; <strong>they are not named on the military landing page</strong>.</td></tr>
+<tr><td>Autoguard</td><td>VSC, GAP, maintenance, oil program, tire/wheel, PDR — merchandised on <strong>commercial</strong> subdomain</td></tr>
+<tr><td>Collision financing</td><td><strong>Sunbit</strong></td></tr>
+<tr><td>Fee conflict</td><td>Commercial VDPs cite <strong>$799</strong> admin vs <strong>$899</strong> processing — canonical OTD table needed</td></tr>
+</tbody></table>
+<h3 id="3-4-parts">3.4 Parts</h3>
+<p>HendrickCars: “one of the most comprehensive GM parts inventories in the Norfolk area.” A <strong>wholesale parts department exists</strong> (staff titles + a 2026 E.D. Va. filing describing commission on retail and wholesale). Public wholesale portal: <strong>not found</strong>. Hours: <strong>unknown</strong> from a primary page.</p>
+<table><thead><tr><th>Capture</th><th>Notes</th></tr></thead><tbody>
+<tr><td><code>/parts/</code></td><td>Indexed; live form <strong>unverified</strong> (Cloudflare)</td></tr>
+<tr><td>Likely <code>/parts/partsorderform/</code></td><td>Cadillac next door publishes this Dealer Inspire pattern</td></tr>
+<tr><td>Phone</td><td>Footer <code>(757) 271-1678</code>; older club listing <code>(757) 455-4500</code> “ask for Bill” — <strong>currency unknown</strong></td></tr>
+<tr><td>GM Parts / Accessories</td><td>Homepage HTML uses Chevrolet <strong>BAC <code>113725</code></strong>: <a href="https://parts.gmparts.com/?bac=113725">parts.gmparts.com</a>, <a href="https://accessories.chevrolet.com/categories?bac=113725">accessories.chevrolet.com</a>. An earlier third-party hit used BAC <code>164265</code> — treat <strong>113725 as current</strong>.</td></tr>
+</tbody></table>
+<p><strong>Lead types:</strong> retail DIY, wholesale/body shops, internal ROs, GM.com accessories pickup. There is <strong>no named accessories department page</strong>. Hendrick Performance (Charlotte) is <strong>not</strong> a Norfolk department.</p>
+<h3 id="3-5-collision-separate-brand-same-address">3.5 Collision (separate brand, same address)</h3>
+<p><a href="https://www.hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-collision-center.htm">Hendrick Collision Chevrolet Norfolk</a></p>
+<table><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody>
+<tr><td>Phone</td><td><strong>(757) 455-4505</strong> (Carwise/HendrickCars). Footer also dumps “Body Shop” into the 271-1678 pool.</td></tr>
+<tr><td>Hours</td><td>M–F 7:30a–5:30p; Sat 8:00a–12:00p; after-hours night drop (key + contact in envelope)</td></tr>
+<tr><td>Position</td><td><strong>Only Hendrick Collision in Virginia</strong>; 11 OEM certs including <strong>C8 Corvette</strong>, Honda/Acura, Subaru, Lexus, Kia, Hyundai, Nissan/Infiniti, CDJR/Fiat; I-CAR Gold</td></tr>
+<tr><td>Stack</td><td><strong>Carwise shop 550635</strong> + <strong>CCC</strong> photo estimate and book-appointment (optional insurance company). HendrickCars: schedule, photo estimate, contact form. Carwise <strong>Shop Assistant</strong> already sits on intake.</td></tr>
+<tr><td>Pay</td><td>Sunbit; limited lifetime on body/paint</td></tr>
+<tr><td>GBP</td><td>~467 reviews @ ~4.0 (aggregator)</td></tr>
+<tr><td>DRP list</td><td><strong>Not published</strong> — “works with all major carriers”</td></tr>
+</tbody></table>
+<p>This is an <strong>insurance-inbound + photo-estimate</strong> lead engine, not a Google-Ads-for-cars engine. Cadillac has no collision shop of its own; this facility is the campus body shop. It also feeds sales (total loss) and service (post-repair alignments, ADAS calib). <strong>Do not duplicate CCC</strong> — orchestrate in front of it.</p>
+<h3 id="3-6-commercial-fleet-b2b">3.6 Commercial / fleet (B2B)</h3>
+<p>Platform is <strong>Work Truck Solutions</strong> (<code>commercial.rickhendrickchevroletnorfolk.com</code> / <code>rickhendrickchevroletnorfolk.worktrucksolutions.com</code>).</p>
+<table><thead><tr><th>Item</th><th>Detail</th></tr></thead><tbody>
+<tr><td>Sales phone</td><td><strong>(757) 300-1588</strong></td></tr>
+<tr><td>Footer fleet phone</td><td><strong>(757) 760-8103</strong> (distinct from the 271-1678 cluster)</td></tr>
+<tr><td>Ignore</td><td><code>(336) 814-9753</code> on some VDPs — platform tracking, not a Norfolk DID</td></tr>
+<tr><td>Named “Truck Pros”</td><td>Steve Ciccone, Nathan Preston, DJ Lord</td></tr>
+<tr><td>Offer</td><td>Mixed-make work trucks/vans (Chevy plus Ford, Ram, GMC, etc.), upfits (Knapheide, Reading, Stahl, Utilimaster, BrightDrop), <strong>Section 179 / bonus depreciation</strong>, Autoguard F&amp;I, commercial service with priority scheduling</td></tr>
+<tr><td>Capture</td><td>Per-unit Get Sale Price · Help Me Find (vocation dropdown: contractor, government, police, HVAC…) · EZOrder / customorders · Digital Commercial Catalog / VanBuilder</td></tr>
+<tr><td>Hours on microsite</td><td>Sales-like: M–F 9–8, Sat 9–6, last Sunday of month</td></tr>
+</tbody></table>
+<p>Two fleet numbers = two lead owners or a tracking vs. direct split. Needs a human confirmation before CRM mapping. Hendrick <strong>Fast Pass</strong> exists at group/Cadillac; Chevy Fast Pass URL was <strong>not live-verified</strong>.</p>
+<h3 id="3-7-ev-as-a-marketing-surface-not-just-a-model-line">3.7 EV as a marketing surface (not just a model line)</h3>
+<p><a href="https://www.plugshare.com/location/47383">PlugShare location 47383</a>: free public J1772 Level 2 at the store (showroom + service/Cadillac side). Historical CCS/DC fast under the Quick Lube sign appears <strong>removed or broken</strong> in later check-ins. Mixed reviews: “lifesaver / free” vs blocked stalls and dead hardware.</p>
+<p>This is unpaid <strong>physical media</strong> for EV shoppers and travelers on I-64/I-264. It currently generates goodwill <em>and</em> 1-star charging comments — an ops problem with marketing consequences. HendrickCars sells Silverado EV / Blazer EV / Equinox EV; <strong>Bolt as a current program is not stated</strong> (only PlugShare comments). There is <strong>no EV-department phone or form</strong>.</p>
+<h2 id="4-full-lead-generation-ecosystem">4. Full lead-generation ecosystem</h2>
+<pre class="mermaid">
+flowchart TB
+  subgraph demand ["Demand creation"]
+    OEM["Chevrolet.com / GM dealer locator / OnStar / recalls"]
+    SEM["Google Ads / LSA / OEM co-op — unconfirmed mix"]
+    SEO["Dealer Inspire content factories<br/>service tips · finance tips · Chevy research · Corvette"]
+    SOC["Facebook chevroletnorfolk<br/>Instagram / YouTube / LinkedIn"]
+    MKT["Service coupons · specials · Gubagoo specials widget"]
+    MIL["GM Military Appreciation + Hampton Roads bases"]
+    INS["Insurance DRP / collision photo estimate"]
+    MKTPLC["CarGurus · Cars.com · Autotrader · Edmunds · iSeeCars"]
+    CAMPUS["Cadillac sister store · HendrickCars.com"]
+    PHYS["VA Beach Blvd drive-by · free EV charge · wait lounge"]
+  end
+
+  subgraph capture ["Capture layer"]
+    DI["Dealer Inspire site + forms"]
+    GB["Gubagoo chat / 10-sec trade / specials"]
+    CALLS["Call tracking pool — 8+ public numbers"]
+    GBP["Google Business Profiles — sales vs service vs collision"]
+  end
+
+  subgraph systems ["Likely systems — confirm before building"]
+    CRM["CRM / ILM — Elead/CDK common at groups this size; not proven for this rooftop"]
+    DMS["DMS — CDK or Reynolds typical; unknown"]
+    SNOW["Hendrick corporate Snowflake Customer 360 / Vehicle 360 via Atrium"]
+    BDC["BDC / salesperson video / text"]
+  end
+
+  demand --> capture --> systems
+  systems --> SOLD["Sold / RO closed / claim paid"]
+  SOLD --> CSI["CSI + DealerRater + Google ask"]
+  CSI --> demand
+</pre>
+<h3 id="4-1-channel-inventory">4.1 Channel inventory</h3>
+<table><thead><tr><th>Layer</th><th>What we know</th><th>Gap</th></tr></thead><tbody>
+<tr><td>Website</td><td>Dealer Inspire GM WordPress on <code>gm.websites.dealerinspire.com</code>; Yoast sitemap; HomeNet photos; Gravity Forms; AudioEye; sticky Schedule Service + Gubagoo specials</td><td>Cloudflare-walled; inventory API needed, not HTML scrape</td></tr>
+<tr><td>Chat/trade</td><td>Gubagoo/Shift Digital <strong>toolbar 103241</strong>; Contact At Once v2 CSS still present; <strong>KBB Instant Cash Offer</strong> at <code>/kelly-blue-book-instant-cash-offer/</code></td><td>Podium CSS (<code>#podium-bubble</code>) exists; podium.com script <strong>not</strong> confirmed on homepage</td></tr>
+<tr><td>Paid / tags</td><td>CDK-labeled GTM <code>GTM-MLHK883</code> plus six other GTM containers; GA4 ×4; Google Ads <code>AW-836346341</code> + four more; Meta pixels ×3; Bing UET <code>187152583</code>; Microsoft Clarity; Adobe Launch; Call Measurement; Trade Desk / Reddit / Pinterest / Amazon</td><td>Creative library (Ads Transparency / Meta Ad Library) <strong>not retrieved</strong>; this is pixel proof, not campaign proof</td></tr>
+<tr><td>Credit app iframe</td><td>Listens for <code>secure.accelerate.dealer.com</code> (<code>DR_STANDALONE_CREDIT_APP_SUBMITTED</code>)</td><td>Dealer.com Accelerate confirmed as listener, not the only path</td></tr>
+<tr><td>Corporate web</td><td>HendrickCars.com store + collision + VA service hub</td><td>Retail→commercial UTMs confirmed (<code>utm_source=retailsite</code>); HendrickCars→dealer UTM <strong>not</strong> on the store-page scrape</td></tr>
+<tr><td>Commercial</td><td>Work Truck Solutions microsite + named truck team</td><td>Unclear if leads land in same CRM</td></tr>
+<tr><td>Marketplaces</td><td>CarGurus 491 · iSeeCars 513 · DealerRater 488 · TrueCar listings exist · Cars.com dealer 5250023 (<strong>1,009 reviews</strong>, includes DealerRater)</td><td>Listing completeness below average; new/used/CPO split unknown</td></tr>
+<tr><td>Social</td><td>Facebook <a href="https://www.facebook.com/ChevroletNorfolk/"><code>chevroletnorfolk</code></a> exists (About-page scrape: 7.4K / 92% recommend — <strong>not re-verified</strong>). YouTube <a href="https://www.youtube.com/channel/UCzalC1OxGZw25rYIzMsx4-w"><code>UCzalC1OxGZw25rYIzMsx4-w</code></a>. Site <strong>footer only links Cars.com, DealerRater, YouTube</strong> — no FB/IG/TikTok icons. IG/TikTok/X handles appear on Facebook About, not in homepage HTML. Nextdoor indexes the <strong>collision</strong> page.</td><td>Cadence and live follower counts unverified; Messenger/IG leads not in the e-price queue</td></tr>
+<tr><td>Reviews</td><td><strong>Google 4.7 / 9,506</strong> (Places) · Google <em>service</em> <strong>4.8 / 367</strong> (unclaimed Birdeye) · DealerRater 4.6/732 · Cars.com 1,009 · <strong>Yelp ~2.3 / 165</strong>. <strong>No Norfolk BBB profile found.</strong></td><td>Yelp is the untreated complaint sink</td></tr>
+<tr><td>Military</td><td><a href="https://www.rickhendrickchevroletnorfolk.com/military-discount-program/"><code>/military-discount-program/</code></a> is live</td><td>PCS/base-gate copy is missing from that page</td></tr>
+<tr><td>Email/SMS</td><td>Hendrick privacy policy confirms group email + SMS programs</td><td><strong>No Xenon (or other ESP) pixel on this storefront</strong></td></tr>
+<tr><td>Call tracking</td><td><code>tracking.callmeasurement.com</code> plus the public number pool</td><td>Attribution soup</td></tr>
+</tbody></table>
+<h3 id="4-2-website-information-architecture-lead-objects">4.2 Website information architecture (lead objects)</h3>
+<pre class="tree"><code>rickhendrickchevroletnorfolk.com
+├── /                          home + geo copy (VB, Chesapeake, Suffolk)
+├── /new-vehicles/             SRP
+├── /new-vehicles/new-vehicle-specials/
+├── /new-vehicles/{model}/     e.g. Camaro research CTAs
+├── /new-corvette-c8-mid-engine-norfolk-va/
+├── /custom-chevy-trucks-norfolk-va/
+├── /custom-lifted-trucks/
+├── /used-vehicles/
+├── /used-vehicles/certified-pre-owned-vehicles/
+├── /used-vehicles/used-vehicle-specials/
+├── /budget-buys/
+├── /hendrick-fast-pass/
+├── /chevy-research/           SEO
+├── /finance/
+├── /finance/apply-for-financing/
+├── /bad-credit-car-loans/
+├── /finance/car-buying-tips/
+├── /military-discount-program/   ★ “No Vets Left Behind”
+├── /first-responder-discount/
+├── /kelly-blue-book-instant-cash-offer/
+├── /service-financing/            Sunbit
+├── /work-trucks-commercial-vans-norfolk-va/
+├── /value-your-trade/         &quot;10 Second Trade&quot;
+├── /contact-us/  /contactusform/
+├── /service/
+├── /service/serviceapptform/  ★ primary service lead
+├── /schedule-service/         alias
+├── /service/contact-service/
+├── /service/serviceandpartsspecials/
+└── /service/service-and-parts-tips/
+     ├── oil-change-price/
+     ├── how-often-should-you-change-your-oil/
+     ├── how-to-jump-start-an-ev/
+     └── how-to-program-chevy-key-fob/
+
+commercial.rickhendrickchevroletnorfolk.com
+hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-norfolk.htm
+hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-collision-center.htm</code></pre>
+<p>Sticky sitewide CTAs: <strong>Schedule Service!</strong> + <strong>10 Second Trade</strong>. Gubagoo specials tray on at least some pages.</p>
+<h2 id="5-phone-listing-hygiene-attribution-problem">5. Phone &amp; listing hygiene (attribution problem)</h2>
+<p>Public numbers attached to this rooftop (many are call-tracking, not DID):</p>
+<table><thead><tr><th>Number</th><th>Where it appears</th><th>Likely use</th></tr></thead><tbody>
+<tr><td>(757) 271-1678</td><td>Site footer: Main/Sales/Service/Parts/Body</td><td>Primary tracking pool</td></tr>
+<tr><td>(757) 544-9732</td><td>Waze, CarHQ service listing</td><td>Service GBP / local pack</td></tr>
+<tr><td>(757) 544-9847</td><td>HendrickCars FAQ</td><td>Store</td></tr>
+<tr><td>(855) 608-4343</td><td>HendrickCars header</td><td>Corporate tracking</td></tr>
+<tr><td>(877) 213-8556</td><td>HendrickCars location-details</td><td>Group sales tracking</td></tr>
+<tr><td>(833) 761-3956</td><td>DealerRater</td><td>Sales tracking</td></tr>
+<tr><td>(757) 300-1588</td><td>Commercial microsite</td><td>Fleet sales</td></tr>
+<tr><td>(757) 760-8103</td><td>Site footer “Fleet”</td><td>Fleet / commercial</td></tr>
+<tr><td>(757) 455-4505</td><td>Collision page</td><td>Collision</td></tr>
+<tr><td>(757) 916-5045 / 5048</td><td>Older page scrapes</td><td>Retired tracking?</td></tr>
+<tr><td>(757) 216-1670</td><td>Third-party directories</td><td>Unconfirmed</td></tr>
+<tr><td>(757) 266-5804</td><td>Apple Maps</td><td>Another tracking or DID — unconfirmed</td></tr>
+</tbody></table>
+<p>Until these are mapped to departments and to CRM lead sources, <strong>no AI scoring model will be trustworthy</strong>.</p>
+<h2 id="6-customer-lifetime-the-real-unit-of-marketing">6. Customer lifetime — the real unit of marketing</h2>
+<p>Dealership marketing is not “get a lead.” It is <strong>own the vehicle’s life in Hampton Roads</strong>.</p>
+<pre class="mermaid">
+stateDiagram-v2
+  [*] --> Aware: Google / military / Corvette / drive-by
+  Aware --> Shop: SRP / VDP / chat / marketplace
+  Shop --> Trade: 10-second trade / appraisal
+  Shop --> Finance: credit app / GM Financial / military auth
+  Finance --> Sold: F&I products + CSI ask
+  Sold --> FirstService: 1st oil / inspection / OnStar
+  FirstService --> RepeatRO: coupons + reminders + advisor relationship
+  RepeatRO --> Collision: accident / insurance
+  Collision --> RepeatRO: post-repair
+  RepeatRO --> Shop: equity / lease-end / MPI “your car is worth X”
+  Collision --> Shop: total loss replacement
+  RepeatRO --> Defection: Priority / RK / Jiffy / independent
+  Shop --> Defection: RK VA Beach / Priority Chesapeake / CarGurus shop
+</pre>
+<p><strong>Highest-leverage loops (in order):</strong></p>
+<ol class="tight">
+<li>Service advisor relationship → next RO (already the moat).</li>
+<li>Service MPI / wait lounge → used or new sale.</li>
+<li>Collision total-loss → replacement sale (reviews already show this happening).</li>
+<li>Military PCS cycle → new sale + service retention.</li>
+<li>Fleet downtime → truck sale + upfit + commercial RO.</li>
+</ol>
+<h2 id="7-market-competitive-frame">7. Market &amp; competitive frame</h2>
+<p><strong>Geo:</strong> Norfolk address, Virginia Beach demand. Copy explicitly targets Chesapeake, Suffolk, Hampton, Newport News, Williamsburg, Eastern Shore, and the bases.</p>
+<p><strong>Chevy franchise competitors</strong></p>
+<ul class="tight">
+<li><a href="https://www.prioritychevrolet.com/">Priority Chevrolet Greenbrier</a> — Chesapeake (Military Hwy) — strongest southside competitor</li>
+<li><a href="https://www.prioritychevroletnewportnews.com/">Priority Chevrolet Newport News</a> — peninsula</li>
+<li><a href="https://www.rkchevrolet.com/">RK Chevrolet</a> — Virginia Beach Blvd — strongest VB competitor; Express Lube</li>
+<li><a href="https://www.southernchevroletrocks.com/">Southern Chevrolet</a> — Chesapeake (Western Branch)</li>
+<li>Cadillac next door (partner and listing-leak destination)</li>
+</ul>
+<p><strong>Not Chevy:</strong> Cavalier is Ford/Lincoln/Mazda. Checkered Flag and Hall/MileOne have no current Chevy franchise here.</p>
+<p><strong>Audience overlays unique to this market</strong></p>
+<ul class="tight">
+<li>Naval Station Norfolk, NAS Oceana, Joint Base Langley-Eustis, Fort Story, shipyards</li>
+<li>Pickup / HD truck + commercial (port, trades, military)</li>
+<li>Corvette / performance (store leans in; collision is C8-certified)</li>
+<li>EV curiosity (free charge + Bolt/Blazer/Equinox/Silverado EV)</li>
+</ul>
+<h2 id="8-tech-stack-known-vs-assumed">8. Tech stack — known vs assumed</h2>
+<table><thead><tr><th>Layer</th><th>Evidence</th><th>Status</th></tr></thead><tbody>
+<tr><td>Website</td><td>Cloudflare origin <code>gm.websites.dealerinspire.com</code>; Yoast; GM BAC <strong>113725</strong></td><td><strong>Known</strong></td></tr>
+<tr><td>Chat / specials</td><td>Gubagoo/Shift Digital toolbar <strong>103241</strong>; Contact At Once v2 remnant</td><td><strong>Known</strong></td></tr>
+<tr><td>Trade</td><td>KBB Instant Cash Offer page + Gubagoo 10-second trade CTA</td><td><strong>Known</strong> (two trade products)</td></tr>
+<tr><td>Tags</td><td>CDK-labeled GTM <code>GTM-MLHK883</code>; Google Ads / Meta / Bing / Adobe / Call Measurement</td><td><strong>Known</strong></td></tr>
+<tr><td>Credit</td><td>Dealer.com Accelerate iframe listener</td><td><strong>Known</strong></td></tr>
+<tr><td>CRM / BDC</td><td>eLead vs VinSolutions vs Reynolds — Hendrick LinkedIn lists all three at <strong>group</strong> level; none proven on this domain</td><td><strong>Unconfirmed for this rooftop</strong></td></tr>
+<tr><td>DMS</td><td>Unknown. CDK GTM ≠ proof of CDK DMS.</td><td><strong>Unknown</strong></td></tr>
+<tr><td>Email/SMS ESP</td><td>Hendrick group sends email/SMS; <strong>no Xenon pixel here</strong></td><td>Group known, store vendor unknown</td></tr>
+<tr><td>Podium</td><td>CSS hooks only</td><td><strong>Ambiguous</strong></td></tr>
+<tr><td>Collision finance / service finance</td><td>Sunbit (<code>/service-financing/</code> + collision page)</td><td><strong>Known</strong></td></tr>
+<tr><td>Collision intake</td><td>Carwise + CCC (shop 550635)</td><td><strong>Known</strong></td></tr>
+<tr><td>Commercial web</td><td>Work Truck Solutions</td><td><strong>Known</strong></td></tr>
+<tr><td>Accessories / parts e-comm</td><td>BAC <strong>113725</strong> on gmparts.com and accessories.chevrolet.com</td><td><strong>Known</strong></td></tr>
+<tr><td>Corporate data</td><td>Hendrick × Atrium × Snowflake Customer 360 / Vehicle 360</td><td><strong>Known for group, not this store’s access</strong></td></tr>
+<tr><td>Reputation</td><td>DealerRater replies exist; at least one addressed <strong>Land Rover Charlotte</strong></td><td>Process gap</td></tr>
+<tr><td>EV listing</td><td>PlugShare</td><td><strong>Known</strong></td></tr>
+<tr><td>Legacy domain</td><td><code>colonialchevroletnorfolk.com</code> still live</td><td>Hygiene gap</td></tr>
+</tbody></table>
+<p><strong>Do not build a parallel CRM.</strong> Any store-level AI should sit <strong>on top of</strong> Hendrick’s Snowflake/DMS/CRM, or it will be unsustainable the first time corporate IT notices.</p>
+<h2 id="9-where-the-picture-is-still-blind">9. Where the picture is still blind</h2>
+<p>These are the next facts to pull from a human at the store / group (or from logged-in vendor consoles) before engineering:</p>
+<ol class="tight">
+<li>DMS + CRM + BDC vendors and whether service and sales share a customer record.</li>
+<li>True DIDs vs. tracking numbers; which GBP is canonical for Service vs Sales vs Collision.</li>
+<li>Monthly lead volumes by source (Dealer Inspire, Gubagoo, Cars.com, CarGurus, Google LSA, OEM, walk-in, phone).</li>
+<li>Show rate and no-show rate on <code>serviceapptform</code>.</li>
+<li>Service reminder vendor (email/SMS) and whether it is mileage-based or time-based.</li>
+<li>Whether insurance DRP relationships are exclusive for collision.</li>
+<li>How F&amp;I actually stacks “No Vets Left Behind” vs GM Military vs first-responder vs college-grad (pages exist; desk rules do not).</li>
+<li>Parts wholesale account process vs BAC 113725 e-comm.</li>
+<li>Who owns the Cadillac listing leak, the footer-without-Facebook gap, and unused Podium CSS.</li>
+<li>Access (if any) to corporate Snowflake Customer 360 for this rooftop.</li>
+</ol>
+<h2 id="10-what-to-build-later-not-now-ai-system-overlay">10. What to build later (not now) — AI system overlay</h2>
+<p>This is a <strong>target architecture</strong>, not an implementation plan.</p>
+<pre class="mermaid">
+flowchart LR
+  subgraph ingest ["Ingest"]
+    L1["Web forms / Gubagoo"]
+    L2["Call tracking + transcript"]
+    L3["DMS ROs + inventory"]
+    L4["GBP / DealerRater"]
+    L5["Insurance / photo estimates"]
+    L6["Marketplace messages"]
+  end
+
+  subgraph brain ["Store intelligence — after vendor map"]
+    ID["Identity resolution<br/>phone + VIN + household"]
+    SCORE["Intent + next-best-action<br/>service vs sales vs collision vs fleet"]
+    SLA["Tow-in / no-appt SLA watchdog"]
+    REV["Review reply that is rooftop-correct"]
+    ATTR["Source-of-truth attribution"]
+  end
+
+  subgraph act ["Actions"]
+    A1["Advisor SMS: MPI in plain language"]
+    A2["No-show recovery"]
+    A3["Service → equity sales handoff"]
+    A4["Listing completeness fixer"]
+    A5["Military / PCS playbooks"]
+    A6["Charging stall + hardware status"]
+  end
+
+  ingest --> brain --> act
+</pre>
+<p><strong>Do first (highest ROI, lowest politics)</strong></p>
+<ol class="tight">
+<li><strong>Listing &amp; tracking cleanup</strong> — Cadillac form leak, phone map, GBP split, iSeeCars photo/price completeness.</li>
+<li><strong>Service appointment reliability</strong> — confirmations, no-shows, tow-in queue visibility (this is where 1-star reviews come from).</li>
+<li><strong>Coupon vs QSR honesty.</strong> Copy already admits $25–$50 oil vs ~$90–$120 dealer. Lead with free brake/alignment/battery inspections, not oil price wars.</li>
+<li><strong>Stale APR / fee table.</strong> Indexed 0% APR delivery-by 8/3/26 is past; $799 vs $899 doc fees. A bot quoting either is a compliance problem.</li>
+<li><strong>Advisor-branded retention</strong> — the public already names Will, Alannah, Molly, Grace; productize that.</li>
+<li><strong>Collision photo-estimate → sales</strong> for total loss.</li>
+<li><strong>Marketplace data quality</strong> so CarGurus/iSeeCars stop taxing conversion.</li>
+</ol>
+<p><strong>Do not do first</strong></p>
+<ul class="tight">
+<li>Another chatbot on Dealer Inspire (Gubagoo already occupies that slot).</li>
+<li>A net-new CRM.</li>
+<li>Generic “AI marketing” that blasts specials without VIN/RO context.</li>
+</ul>
+<h2 id="11-source-list">11. Source list</h2>
+<ul class="tight">
+<li><a href="https://rickhendrickchevroletnorfolk.com/">Dealer site home</a> (Cloudflare-blocked to scrapers; snippets via search)</li>
+<li><a href="https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/">Service appointment form</a></li>
+<li><a href="https://www.hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-norfolk.htm">HendrickCars store page</a></li>
+<li><a href="https://www.hendrickcars.com/service-virginia.htm">Hendrick VA service hub</a></li>
+<li><a href="https://www.hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-collision-center.htm">Collision center</a></li>
+<li><a href="https://commercial.rickhendrickchevroletnorfolk.com/about">Commercial about</a></li>
+<li><a href="https://commercial.rickhendrickchevroletnorfolk.com/">Commercial home / Work Truck Solutions</a></li>
+<li><a href="https://commercial.rickhendrickchevroletnorfolk.com/p/tax-section-179">Section 179</a></li>
+<li><a href="https://www.carwise.com/auto-body-shops/rick-hendrick-chevrolet-collision-norfolk-norfolk-va-23502/550635">Carwise collision 550635</a></li>
+<li><a href="https://www.carwise.com/online-photo-estimate/rick-hendrick-chevrolet-collision-norfolk-norfolk-va-23502/550635">Carwise photo estimate</a></li>
+<li><a href="https://accessories.chevrolet.com/?bac=164265">GM Accessories BAC 164265</a></li>
+<li><a href="https://www.hendrickperformance.com/corvettes.aspx">Hendrick Performance (Charlotte — not this rooftop)</a></li>
+<li><a href="https://www.rickhendrickchevroletnorfolk.com/new-corvette-c8-mid-engine-norfolk-va/">Corvette C8 landing</a></li>
+<li><a href="https://web.archive.org/web/20251016100907/https://www.rickhendrickchevroletnorfolk.com/service/">Service hub archive Oct 2025</a></li>
+<li><a href="https://web.archive.org/web/20241203112857/https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/">Appointment form archive Dec 2024</a></li>
+<li><a href="https://reviews.birdeye.com/rick-hendrick-chevrolet-norfolk-service-167694268811493">Birdeye Google service listing</a></li>
+<li><a href="https://www.rickhendrickchevroletnorfolk.com/bad-credit-car-loans/">Bad-credit loans</a></li>
+<li><a href="https://www.rickhendrickchevroletnorfolk.com/military-discount-program/">Military / No Vets Left Behind</a></li>
+<li><a href="https://www.rickhendrickchevroletnorfolk.com/kelly-blue-book-instant-cash-offer/">KBB Instant Cash Offer</a></li>
+<li><a href="https://www.youtube.com/channel/UCzalC1OxGZw25rYIzMsx4-w">YouTube</a></li>
+<li><a href="https://parts.gmparts.com/?bac=113725">GM Parts BAC 113725</a></li>
+<li><a href="https://commercial.rickhendrickchevroletnorfolk.com/p/autoguard">Hendrick Autoguard</a></li>
+<li><a href="https://www.dealerrater.com/dealer/Rick-Hendrick-Chevrolet-Norfolk-dealer-reviews-23389/">DealerRater</a></li>
+<li><a href="https://www.capitalone.com/cars/dealership/NORFOLK-VA/Rick+Hendrick+Chevrolet+VA/1959">Google rating via Capital One / Places</a> (4.7 / 9,506)</li>
+<li><a href="https://www.cargurus.com/Cars/m-Rick-Hendrick-Chevrolet-Norfolk-sp267210">CarGurus dealer</a></li>
+<li>Instagram: <a href="https://www.instagram.com/rickhendrickchevroletnorfolk/">rickhendrickchevroletnorfolk</a></li>
+<li>Autotrader dealer id 100009</li>
+<li><a href="https://www.iseecars.com/dealer-717056-rick-hendrick-chevrolet-norfolk-in-norfolk-va">iSeeCars dealer</a></li>
+<li><a href="https://www.plugshare.com/location/47383">PlugShare</a></li>
+<li><a href="https://www.gmmilitaryappreciation.com/">GM Military Appreciation</a></li>
+<li><a href="https://atrium.ai/customers/building-a-unified-data-foundation-with-snowflake-for-hendrick-automotive-group/">Hendrick Snowflake / Atrium</a></li>
+<li>Competitors: <a href="https://www.prioritychevrolet.com/">Priority Chevrolet</a>, <a href="https://www.rkchevrolet.com/">RK Chevrolet</a></li>
+<li>Facebook: <a href="https://www.facebook.com/ChevroletNorfolk/">chevroletnorfolk</a></li>
+<li>LinkedIn: <a href="https://www.linkedin.com/company/rick-hendrick-chevrolet---norfolk-virginia">Rick Hendrick Chevrolet - Norfolk, Virginia</a></li>
+</ul>
+<h2 id="12-how-to-read-this-before-building">12. How to read this before building</h2>
+<p>Service is not a sidecar. For this store it is the <strong>always-on acquisition and retention channel</strong>, with sales as episodic high-ticket conversion and collision/fleet as specialized capture. The public internet already shows a competent advisor culture, a serious Corvette/collision specialty, a huge mixed-make used operation, and sloppy listing/phone hygiene.</p>
+<p>The first AI-powered system worth building is not a campaign engine. It is a <strong>rooftop operating picture</strong>: one identity per customer and VIN, every lead source mapped, service SLAs visible, and next-best-action that respects Hendrick corporate data — not a second brain that fights it.</p>
+    <footer class="note">Converted from marketing-leads-map.md. Unconfirmed items are labeled in the source. Diagrams render with Mermaid in the browser.</footer>
+  </main>
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: "dark",
+      securityLevel: "loose",
+      themeVariables: {
+        primaryColor: "#141d2e",
+        primaryTextColor: "#f4efe4",
+        primaryBorderColor: "#c9a227",
+        lineColor: "#c9a227",
+        secondaryColor: "#1c2740",
+        tertiaryColor: "#0b1220",
+        noteBkgColor: "#1c2740",
+        noteTextColor: "#f4efe4"
+      }
+    });
+  </script>
+</body>
+</html>
