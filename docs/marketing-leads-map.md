@@ -225,7 +225,7 @@ Service-only Google volume is **not** cleanly isolated from the sales GBP. Yelp 
 | Chat / specials tray | Gubagoo (`cdn.gubagoo.io`) + “Start Chat” |
 | Video intro | DealerRater: Brady Roundtree after a web hit |
 
-**Offer hygiene:** indexed homepage still had **0% APR 60 months on Silverado 1500**, 90-day deferral, GM Financial, delivery by **8/3/26** — that date is already past. Blogs still show **2025** APR legalese. **Do not let a bot quote expired APR.**
+**Offer hygiene:** homepage carousels (Aug 2026) still run **GM national co-op art** (Silverado 0% / 90-day deferral, Equinox 3.9% APR, Trailblazer cash, Certified Service summer rebates) with take-delivery-by **8/31/26**. Older indexes also showed **8/3/26**. Blogs still show **2025** APR legalese. **Expiry must be read from the live disclaimer, not from memory.**
 
 **Hours conflict:** HendrickCars = Mon–Sat 9a–8p, **Sunday closed**. Dealer/Cars.com Silverado pages = Sunday **12p–6p**. Commercial = last Sunday of month. Confirm before publishing.
 
@@ -255,7 +255,7 @@ Trade: `/value-your-trade/` branded **“10 Second Trade”**. HendrickCars: the
 | Bad credit | Dedicated page `/bad-credit-car-loans/` (BK, repo, late pays — opposite funnel from 0% APR) |
 | Finance SEO hub | `/finance/car-buying-tips/` |
 | Captive | GM Financial required on advertised 0% / deferral |
-| Military / first-time / college | Name-dropped in disclaimers and HendrickCars FAQ; **no dedicated retail landing found** |
+| Military / first responder / college | Dedicated retail pages: [`/military-discount-program/`](https://www.rickhendrickchevroletnorfolk.com/military-discount-program/) (“**No Vets Left Behind**” — dealer overlay + GM Go Code/ID.me; **5% off service & parts for the vehicle’s life**; VIP appointment; DD214/Veteran ID). Also [`/first-responder-discount/`](https://www.rickhendrickchevroletnorfolk.com/first-responder-discount/). College-grad page exists in the sitemap. Bases are a market reality; **they are not named on the military landing page**. |
 | Autoguard | VSC, GAP, maintenance, oil program, tire/wheel, PDR — merchandised on **commercial** subdomain |
 | Collision financing | **Sunbit** |
 | Fee conflict | Commercial VDPs cite **$799** admin vs **$899** processing — canonical OTD table needed |
@@ -269,7 +269,7 @@ HendrickCars: “one of the most comprehensive GM parts inventories in the Norfo
 | `/parts/` | Indexed; live form **unverified** (Cloudflare) |
 | Likely `/parts/partsorderform/` | Cadillac next door publishes this Dealer Inspire pattern |
 | Phone | Footer `(757) 271-1678`; older club listing `(757) 455-4500` “ask for Bill” — **currency unknown** |
-| GM Accessories | [accessories.chevrolet.com/?bac=164265](https://accessories.chevrolet.com/?bac=164265) ship-to-home or dealer pickup |
+| GM Parts / Accessories | Homepage HTML uses Chevrolet **BAC `113725`**: [parts.gmparts.com](https://parts.gmparts.com/?bac=113725), [accessories.chevrolet.com](https://accessories.chevrolet.com/categories?bac=113725). An earlier third-party hit used BAC `164265` — treat **113725 as current**. |
 
 **Lead types:** retail DIY, wholesale/body shops, internal ROs, GM.com accessories pickup. There is **no named accessories department page**. Hendrick Performance (Charlotte) is **not** a Norfolk department.
 
@@ -354,15 +354,18 @@ flowchart TB
 
 | Layer | What we know | Gap |
 |---|---|---|
-| Website | Dealer Inspire on `gm.websites.dealerinspire.com`; HomeNet photos; Gravity Forms test-drive; sticky Schedule Service + 10 Second Trade | Cloudflare-walled; inventory API needed, not HTML scrape |
-| Chat/trade | Gubagoo specials + Start Chat; 10 Second Trade vendor on `/value-your-trade/` **not live-verified** | RocketReach also lists CarNow MessageNow / Podium — **may be stale** |
-| Corporate web | HendrickCars.com store + collision + VA service hub with UTMs | Duplicate listings vs rooftop site |
+| Website | Dealer Inspire GM WordPress on `gm.websites.dealerinspire.com`; Yoast sitemap; HomeNet photos; Gravity Forms; AudioEye; sticky Schedule Service + Gubagoo specials | Cloudflare-walled; inventory API needed, not HTML scrape |
+| Chat/trade | Gubagoo/Shift Digital **toolbar 103241**; Contact At Once v2 CSS still present; **KBB Instant Cash Offer** at `/kelly-blue-book-instant-cash-offer/` | Podium CSS (`#podium-bubble`) exists; podium.com script **not** confirmed on homepage |
+| Paid / tags | CDK-labeled GTM `GTM-MLHK883` plus six other GTM containers; GA4 ×4; Google Ads `AW-836346341` + four more; Meta pixels ×3; Bing UET `187152583`; Microsoft Clarity; Adobe Launch; Call Measurement; Trade Desk / Reddit / Pinterest / Amazon | Creative library (Ads Transparency / Meta Ad Library) **not retrieved**; this is pixel proof, not campaign proof |
+| Credit app iframe | Listens for `secure.accelerate.dealer.com` (`DR_STANDALONE_CREDIT_APP_SUBMITTED`) | Dealer.com Accelerate confirmed as listener, not the only path |
+| Corporate web | HendrickCars.com store + collision + VA service hub | Retail→commercial UTMs confirmed (`utm_source=retailsite`); HendrickCars→dealer UTM **not** on the store-page scrape |
 | Commercial | Work Truck Solutions microsite + named truck team | Unclear if leads land in same CRM |
-| Marketplaces | CarGurus 491 · iSeeCars 513 · DealerRater 488 · TrueCar listings exist · Cars.com dealer 5250023 (inventory fetch blocked; “Claim your store” still shown) | Listing completeness below average; new/used/CPO split unknown |
-| Social | Facebook [`chevroletnorfolk`](https://www.facebook.com/ChevroletNorfolk/) **7.4K followers**, 92% recommend / 1,444 reviews · Instagram [`@rickhendrickchevroletnorfolk`](https://www.instagram.com/rickhendrickchevroletnorfolk/) · TikTok `@rickhendrickchevy` · X `@HChevyNorfolk` · LinkedIn still lists `colonialchevroletnorfolk.com` | Paid social mix unknown; Messenger/IG leads not evidenced in the same queue as e-price |
-| Reviews | **Google 4.7 / 9,506** (Places) · Google *service* listing **4.8 / 367** (unclaimed Birdeye) · DealerRater 4.6/732 · Cars.com ~816 · **Yelp ~2.3 / 165** | Yelp is the untreated complaint sink; Birdeye service profile unclaimed |
-| Military | OEM program + Hendrick copy aimed at NAS Norfolk, Oceana, Langley-Eustis, Fort Story | Store-level military landing page **not fetched** |
-| Call tracking | See §5 | Attribution soup |
+| Marketplaces | CarGurus 491 · iSeeCars 513 · DealerRater 488 · TrueCar listings exist · Cars.com dealer 5250023 (**1,009 reviews**, includes DealerRater) | Listing completeness below average; new/used/CPO split unknown |
+| Social | Facebook [`chevroletnorfolk`](https://www.facebook.com/ChevroletNorfolk/) exists (About-page scrape: 7.4K / 92% recommend — **not re-verified**). YouTube [`UCzalC1OxGZw25rYIzMsx4-w`](https://www.youtube.com/channel/UCzalC1OxGZw25rYIzMsx4-w). Site **footer only links Cars.com, DealerRater, YouTube** — no FB/IG/TikTok icons. IG/TikTok/X handles appear on Facebook About, not in homepage HTML. Nextdoor indexes the **collision** page. | Cadence and live follower counts unverified; Messenger/IG leads not in the e-price queue |
+| Reviews | **Google 4.7 / 9,506** (Places) · Google *service* **4.8 / 367** (unclaimed Birdeye) · DealerRater 4.6/732 · Cars.com 1,009 · **Yelp ~2.3 / 165**. **No Norfolk BBB profile found.** | Yelp is the untreated complaint sink |
+| Military | [`/military-discount-program/`](https://www.rickhendrickchevroletnorfolk.com/military-discount-program/) is live | PCS/base-gate copy is missing from that page |
+| Email/SMS | Hendrick privacy policy confirms group email + SMS programs | **No Xenon (or other ESP) pixel on this storefront** |
+| Call tracking | `tracking.callmeasurement.com` plus the public number pool | Attribution soup |
 
 ### 4.2 Website information architecture (lead objects)
 
@@ -385,6 +388,11 @@ rickhendrickchevroletnorfolk.com
 ├── /finance/apply-for-financing/
 ├── /bad-credit-car-loans/
 ├── /finance/car-buying-tips/
+├── /military-discount-program/   ★ “No Vets Left Behind”
+├── /first-responder-discount/
+├── /kelly-blue-book-instant-cash-offer/
+├── /service-financing/            Sunbit
+├── /work-trucks-commercial-vans-norfolk-va/
 ├── /value-your-trade/         "10 Second Trade"
 ├── /contact-us/  /contactusform/
 ├── /service/
@@ -467,11 +475,13 @@ stateDiagram-v2
 
 **Chevy franchise competitors**
 
-- Priority Chevrolet Greenbrier — Chesapeake (Military Hwy) — strongest southside competitor
-- RK Chevrolet — Virginia Beach Blvd (different stretch) — strongest VB competitor; Express Lube is a convenience weapon
-- Other GM/Hendrick: Cadillac next door (partner and listing-leak destination)
+- [Priority Chevrolet Greenbrier](https://www.prioritychevrolet.com/) — Chesapeake (Military Hwy) — strongest southside competitor
+- [Priority Chevrolet Newport News](https://www.prioritychevroletnewportnews.com/) — peninsula
+- [RK Chevrolet](https://www.rkchevrolet.com/) — Virginia Beach Blvd — strongest VB competitor; Express Lube
+- [Southern Chevrolet](https://www.southernchevroletrocks.com/) — Chesapeake (Western Branch)
+- Cadillac next door (partner and listing-leak destination)
 
-**Non-Chevy groups:** Checkered Flag (Honda/parts on the same boulevard; used outlet), Hall, independents, national quick-lube.
+**Not Chevy:** Cavalier is Ford/Lincoln/Mazda. Checkered Flag and Hall/MileOne have no current Chevy franchise here.
 
 **Audience overlays unique to this market**
 
@@ -486,18 +496,23 @@ stateDiagram-v2
 
 | Layer | Evidence | Status |
 |---|---|---|
-| Website | Cloudflare block names `gm.websites.dealerinspire.com` | **Known** |
-| Chat / trade / specials | `cdn.gubagoo.io` on pages | **Known** |
-| Corporate data | Hendrick × Atrium × Snowflake Customer 360 / Vehicle 360 (lead scoring, inventory, personalization at **group** level) | **Known for group, not this store’s access** |
-| CRM / BDC | Elead/CDK is common at this scale; salesperson video-after-web-lead is a CRM/BDC behavior | **Unconfirmed for this rooftop** |
-| DMS | Unknown (CDK vs Reynolds). Needed for RO, inventory, F&I | **Unknown** |
-| Reputation | DealerRater responses exist; at least one reply addressed **Land Rover Charlotte** on a Norfolk review — corporate or shared-queue response | Process gap |
-| Collision finance | Sunbit | **Known** |
-| Collision intake | Carwise + CCC photo estimate / book-appointment (shop 550635) | **Known** |
-| Commercial web | Work Truck Solutions (EZOrder, vocation RFQ) | **Known** |
-| Accessories e-comm | Chevrolet.com BAC 164265 | **Known** |
+| Website | Cloudflare origin `gm.websites.dealerinspire.com`; Yoast; GM BAC **113725** | **Known** |
+| Chat / specials | Gubagoo/Shift Digital toolbar **103241**; Contact At Once v2 remnant | **Known** |
+| Trade | KBB Instant Cash Offer page + Gubagoo 10-second trade CTA | **Known** (two trade products) |
+| Tags | CDK-labeled GTM `GTM-MLHK883`; Google Ads / Meta / Bing / Adobe / Call Measurement | **Known** |
+| Credit | Dealer.com Accelerate iframe listener | **Known** |
+| CRM / BDC | eLead vs VinSolutions vs Reynolds — Hendrick LinkedIn lists all three at **group** level; none proven on this domain | **Unconfirmed for this rooftop** |
+| DMS | Unknown. CDK GTM ≠ proof of CDK DMS. | **Unknown** |
+| Email/SMS ESP | Hendrick group sends email/SMS; **no Xenon pixel here** | Group known, store vendor unknown |
+| Podium | CSS hooks only | **Ambiguous** |
+| Collision finance / service finance | Sunbit (`/service-financing/` + collision page) | **Known** |
+| Collision intake | Carwise + CCC (shop 550635) | **Known** |
+| Commercial web | Work Truck Solutions | **Known** |
+| Accessories / parts e-comm | BAC **113725** on gmparts.com and accessories.chevrolet.com | **Known** |
+| Corporate data | Hendrick × Atrium × Snowflake Customer 360 / Vehicle 360 | **Known for group, not this store’s access** |
+| Reputation | DealerRater replies exist; at least one addressed **Land Rover Charlotte** | Process gap |
 | EV listing | PlugShare | **Known** |
-| Legacy domain | `colonialchevroletnorfolk.com` still resolves to this brand; LinkedIn still uses it | Hygiene gap |
+| Legacy domain | `colonialchevroletnorfolk.com` still live | Hygiene gap |
 
 **Do not build a parallel CRM.** Any store-level AI should sit **on top of** Hendrick’s Snowflake/DMS/CRM, or it will be unsustainable the first time corporate IT notices.
 
@@ -513,9 +528,9 @@ These are the next facts to pull from a human at the store / group (or from logg
 4. Show rate and no-show rate on `serviceapptform`.
 5. Service reminder vendor (email/SMS) and whether it is mileage-based or time-based.
 6. Whether insurance DRP relationships are exclusive for collision.
-7. Military / first responder / college grad offer handling in F&I.
-8. Parts e-commerce and wholesale account process.
-9. Who owns the Cadillac listing leak and HendrickCars duplicate pages.
+7. How F&I actually stacks “No Vets Left Behind” vs GM Military vs first-responder vs college-grad (pages exist; desk rules do not).
+8. Parts wholesale account process vs BAC 113725 e-comm.
+9. Who owns the Cadillac listing leak, the footer-without-Facebook gap, and unused Podium CSS.
 10. Access (if any) to corporate Snowflake Customer 360 for this rooftop.
 
 ---
@@ -592,7 +607,10 @@ flowchart LR
 - [Appointment form archive Dec 2024](https://web.archive.org/web/20241203112857/https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/)
 - [Birdeye Google service listing](https://reviews.birdeye.com/rick-hendrick-chevrolet-norfolk-service-167694268811493)
 - [Bad-credit loans](https://www.rickhendrickchevroletnorfolk.com/bad-credit-car-loans/)
-- [Hendrick Fast Pass](https://www.rickhendrickchevroletnorfolk.com/hendrick-fast-pass/)
+- [Military / No Vets Left Behind](https://www.rickhendrickchevroletnorfolk.com/military-discount-program/)
+- [KBB Instant Cash Offer](https://www.rickhendrickchevroletnorfolk.com/kelly-blue-book-instant-cash-offer/)
+- [YouTube](https://www.youtube.com/channel/UCzalC1OxGZw25rYIzMsx4-w)
+- [GM Parts BAC 113725](https://parts.gmparts.com/?bac=113725)
 - [Hendrick Autoguard](https://commercial.rickhendrickchevroletnorfolk.com/p/autoguard)
 - [DealerRater](https://www.dealerrater.com/dealer/Rick-Hendrick-Chevrolet-Norfolk-dealer-reviews-23389/)
 - [Google rating via Capital One / Places](https://www.capitalone.com/cars/dealership/NORFOLK-VA/Rick+Hendrick+Chevrolet+VA/1959) (4.7 / 9,506)

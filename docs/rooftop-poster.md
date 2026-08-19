@@ -8,7 +8,7 @@ flowchart TB
     VB["Virginia Beach demand"]
     NF["Norfolk rooftop · 6252 E VA Beach Blvd"]
     MIL["NAS Norfolk · Oceana · Langley · shipyards"]
-    COMP["Priority Chevy Chesapeake · RK Chevy VB"]
+    COMP["Priority Greenbrier + Newport News · RK VB · Southern Chevy"]
   end
 
   VB --> NF
@@ -26,8 +26,8 @@ flowchart TB
   subgraph VAR ["Variable ops"]
     NEW["New: Silverado Tahoe Equinox Corvette EV"]
     USED["Used: ~500 mixed-make units on 3P sites"]
-    TRADE["Gubagoo 10-second trade"]
-    FI["Credit app · GM Financial · military"]
+    TRADE["KBB ICO + Gubagoo 10-second trade"]
+    FI["Credit app · Accelerate · GM Financial · No Vets Left Behind"]
   end
 
   subgraph ADJ ["Adjacent P&Ls"]
@@ -64,8 +64,9 @@ flowchart TB
 | 7 | Work Truck Solutions EZOrder + two fleet phones | B2B is a different CRM object |
 | 8 | Marketplace + DealerRater + GBP replies | Shared-queue replies already misfire |
 | 9 | Google 4.7 / 9,506 vs Yelp ~2.3 / 165 | Review gating is working for Google and failing on Yelp |
-| 10 | Wholesale parts (real desk, no public portal) + GM Accessories BAC 164265 | Invisible B2B capture |
-| 11 | Get E-Price / Fast Pass / `/bad-credit-car-loans/` vs expired 0% APR banners | Finance-contingent price + stale offers = compliance risk for any bot |
+| 10 | Wholesale parts + GM BAC `113725` (gmparts / accessories) | Invisible B2B vs OEM e-comm |
+| 11 | Get E-Price / Fast Pass / `/bad-credit-car-loans/` vs live vs expired APR | Finance-contingent price = compliance risk |
+| 12 | `/military-discount-program/` (“No Vets Left Behind” + 5% service/parts for life) | Highest-fit local overlay; bases not named on the page |
 
 ## Do not build yet
 
