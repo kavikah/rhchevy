@@ -1,20 +1,20 @@
 :root {
-  --navy: #0b1220;
-  --navy-2: #141d2e;
-  --gold: #c9a227;
-  --gold-2: #e8d08a;
-  --paper: #f4efe4;
-  --muted: #9aa3b5;
-  --ok: #7dcea0;
-  --bad: #e07a7a;
-  --line: rgba(255,255,255,.1);
+  --ink: #1c1a16;
+  --muted: #5c584f;
+  --gold: #9a7b14;
+  --gold-2: #7a6110;
+  --paper: #f7f4ee;
+  --card: #ffffff;
+  --ok: #2f7a4f;
+  --bad: #b4453a;
+  --line: rgba(28, 26, 22, .12);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
   margin: 0;
-  background: var(--navy);
-  color: var(--paper);
+  background: var(--paper);
+  color: var(--ink);
   font-family: "Avenir Next", "Segoe UI", "Helvetica Neue", sans-serif;
   line-height: 1.55;
 }
@@ -24,61 +24,69 @@ a:hover { color: var(--gold); }
   position: sticky; top: 0; z-index: 20;
   display: flex; gap: 1.2rem; align-items: center; flex-wrap: wrap;
   padding: .85rem 6vw;
-  background: rgba(11,18,32,.92);
+  background: rgba(247, 244, 238, .94);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(10px);
 }
 .top .brand { color: var(--gold); letter-spacing: .14em; text-transform: uppercase; font-size: .72rem; font-weight: 800; margin-right: auto; }
 .top a { color: var(--muted); text-decoration: none; font-size: .88rem; }
-.top a:hover, .top a.on { color: var(--gold); }
+.top a:hover, .top a.on { color: var(--gold-2); font-weight: 700; }
 .wrap { max-width: 980px; margin: 0 auto; padding: 3.2rem 6vw 6rem; }
 .kicker { color: var(--gold); letter-spacing: .16em; text-transform: uppercase; font-size: .75rem; font-weight: 700; }
-h1 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.15; margin: .4rem 0 1rem; }
-h2 { font-size: 1.45rem; margin: 2.6rem 0 .8rem; padding-top: 1rem; border-top: 1px solid var(--line); }
+h1 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); line-height: 1.15; margin: .4rem 0 1rem; color: var(--ink); }
+h2 { font-size: 1.45rem; margin: 2.6rem 0 .8rem; padding-top: 1rem; border-top: 1px solid var(--line); color: var(--ink); }
 h3 { font-size: 1.12rem; margin: 1.6rem 0 .5rem; color: var(--gold-2); }
-p, li { color: #d7d2c6; }
+p, li { color: var(--ink); }
 .lede { color: var(--muted); font-size: 1.08rem; max-width: 62ch; }
 .meta { color: var(--gold-2); font-size: .92rem; }
 .facts { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.4rem; margin: 1.4rem 0 2rem; }
-.facts div { background: var(--navy-2); border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
+.facts div { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .8rem 1rem; }
 .facts dt { color: var(--gold); font-size: .7rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; }
 .facts dd { margin: .25rem 0 0; }
 .callout {
   margin: 1.2rem 0 1.6rem;
   padding: 1rem 1.15rem;
   border-left: 3px solid var(--gold);
-  background: rgba(201,162,39,.08);
+  background: rgba(154, 123, 20, .08);
 }
-table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.6rem; font-size: .92rem; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.6rem; font-size: .92rem; background: var(--card); }
 th, td { text-align: left; vertical-align: top; padding: .65rem .7rem; border-bottom: 1px solid var(--line); }
-th { color: var(--gold); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; }
-tr:hover td { background: rgba(255,255,255,.03); }
-.mermaid { background: var(--navy-2); border: 1px solid var(--line); border-radius: 14px; padding: 1rem; margin: 1.2rem 0 1.8rem; overflow-x: auto; }
+th { color: var(--gold-2); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; background: #f1eee6; }
+tr:hover td { background: #f3efe6; }
+.mermaid {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1rem;
+  margin: 1.2rem 0 1.8rem;
+  overflow-x: auto;
+}
 pre.tree, pre.code {
-  background: var(--navy-2);
+  background: var(--card);
   border: 1px solid var(--line);
   border-radius: 14px;
   padding: 1rem 1.1rem;
   overflow-x: auto;
-  color: var(--gold-2);
+  color: var(--ink);
   font-size: .82rem;
   line-height: 1.45;
 }
+code { font-size: .9em; background: #efeae0; padding: .05em .3em; border-radius: 4px; }
 ol.tight li, ul.tight li { margin: .35rem 0; }
 .toc { display: grid; grid-template-columns: 1fr 1fr; gap: .35rem 1.2rem; margin: 1.4rem 0 2rem; }
 .toc a { text-decoration: none; color: var(--muted); }
-.toc a:hover { color: var(--gold); }
+.toc a:hover { color: var(--gold-2); }
 .prio { display: grid; gap: .7rem; }
-.prio .row { display: grid; grid-template-columns: 2.2rem 1fr; gap: .8rem; align-items: start; background: var(--navy-2); border: 1px solid var(--line); border-radius: 12px; padding: .85rem 1rem; }
-.num { width: 2rem; height: 2rem; border-radius: 50%; background: var(--gold); color: var(--navy); font-weight: 800; display: flex; align-items: center; justify-content: center; }
-.stop { border-left: 3px solid var(--bad); padding: 1rem 1.15rem; background: rgba(224,122,122,.08); margin-top: 1.2rem; }
+.prio .row { display: grid; grid-template-columns: 2.2rem 1fr; gap: .8rem; align-items: start; background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .85rem 1rem; }
+.num { width: 2rem; height: 2rem; border-radius: 50%; background: var(--gold); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; }
+.stop { border-left: 3px solid var(--bad); padding: 1rem 1.15rem; background: rgba(180, 69, 58, .08); margin-top: 1.2rem; }
 .flow { display: grid; gap: 1rem; margin: 1.4rem 0; }
 .flow-row { display: grid; gap: .7rem; }
 @media (min-width: 800px) {
   .flow-row.four { grid-template-columns: repeat(4, 1fr); }
   .flow-row.three { grid-template-columns: repeat(3, 1fr); }
 }
-.chip { background: var(--navy-2); border: 1px solid var(--line); border-radius: 12px; padding: .8rem .9rem; font-size: .9rem; }
+.chip { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: .8rem .9rem; font-size: .9rem; }
 .chip .tag { color: var(--gold); font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: .35rem; }
 .arrows { text-align: center; color: var(--gold); font-size: 1.2rem; margin: .2rem 0; }
 footer.note { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
