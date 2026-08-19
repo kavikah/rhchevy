@@ -1,6 +1,6 @@
 # Rooftop poster — Rick Hendrick Chevrolet Norfolk
 
-One-screen view of demand. Detail lives in [marketing-leads-map.md](./marketing-leads-map.md).
+One-screen view of demand. Detail lives in [marketing-leads-map.md](./marketing-leads-map.md). Present the opportunities in [opportunities-deck.html](./opportunities-deck.html).
 
 ```mermaid
 flowchart TB
