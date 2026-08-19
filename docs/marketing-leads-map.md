@@ -3,6 +3,7 @@
 **Purpose:** Big-picture view of how this rooftop generates, captures, and loses demand — starting with Service — before any AI backend or marketing system is built.
 
 **Store:** Rick Hendrick Chevrolet Norfolk  
+**Legal:** Colonial Chevrolet Company, LP d/b/a Rick Hendrick Chevrolet-Norfolk  
 **Address:** 6252 E. Virginia Beach Blvd, Norfolk, VA 23502 (Virginia Beach Blvd corridor; serves Virginia Beach, Chesapeake, Suffolk, Portsmouth, Hampton, Newport News)  
 **Owner:** Hendrick Automotive Group (part of the group since 1994; store founded 1930)  
 **Campus:** Chevrolet + co-located Hendrick Collision + adjacent Rick Hendrick Cadillac Norfolk (6222 E. Virginia Beach Blvd)
@@ -244,9 +245,16 @@ Homepage legal also referenced `gmmilitaryapp` — military is in the offer stac
 
 ### 3.4 Parts
 
-HendrickCars: “one of the most comprehensive GM parts inventories in the Norfolk area”; DIY and wholesale implied. Footer phone often shares the main tracking number `(757) 271-1678`. Hours **unconfirmed** (aggregators disagree: some say 7:30a–5:30p M–F). Public parts e-commerce URL was not verified.
+HendrickCars: “one of the most comprehensive GM parts inventories in the Norfolk area.” A **wholesale parts department exists** (staff titles + a 2026 E.D. Va. filing describing commission on retail and wholesale). Public wholesale portal: **not found**. Hours: **unknown** from a primary page.
 
-**Lead types:** retail DIY, wholesale/body shops, internal ROs, accessories/upfit (see commercial).
+| Capture | Notes |
+|---|---|
+| `/parts/` | Indexed; live form **unverified** (Cloudflare) |
+| Likely `/parts/partsorderform/` | Cadillac next door publishes this Dealer Inspire pattern |
+| Phone | Footer `(757) 271-1678`; older club listing `(757) 455-4500` “ask for Bill” — **currency unknown** |
+| GM Accessories | [accessories.chevrolet.com/?bac=164265](https://accessories.chevrolet.com/?bac=164265) ship-to-home or dealer pickup |
+
+**Lead types:** retail DIY, wholesale/body shops, internal ROs, GM.com accessories pickup. There is **no named accessories department page**. Hendrick Performance (Charlotte) is **not** a Norfolk department.
 
 ### 3.5 Collision (separate brand, same address)
 
@@ -254,34 +262,37 @@ HendrickCars: “one of the most comprehensive GM parts inventories in the Norfo
 
 | Item | Detail |
 |---|---|
-| Phone | **(757) 455-4505** |
-| Hours | M–F 7:30a–5:30p; Sat 8:00a–12:00p; after-hours night drop |
+| Phone | **(757) 455-4505** (Carwise/HendrickCars). Footer also dumps “Body Shop” into the 271-1678 pool. |
+| Hours | M–F 7:30a–5:30p; Sat 8:00a–12:00p; after-hours night drop (key + contact in envelope) |
 | Position | **Only Hendrick Collision in Virginia**; 11 OEM certs including **C8 Corvette**, Honda/Acura, Subaru, Lexus, Kia, Hyundai, Nissan/Infiniti, CDJR/Fiat; I-CAR Gold |
-| Capture | Schedule appointment, **photo estimate**, insurance coordination, Sunbit, contact form |
-| Warranty | Limited lifetime on body/paint |
+| Stack | **Carwise shop 550635** + **CCC** photo estimate and book-appointment (optional insurance company). HendrickCars: schedule, photo estimate, contact form. Carwise **Shop Assistant** already sits on intake. |
+| Pay | Sunbit; limited lifetime on body/paint |
 | GBP | ~467 reviews @ ~4.0 (aggregator) |
+| DRP list | **Not published** — “works with all major carriers” |
 
-This is an **insurance-inbound + photo-estimate** lead engine, not a Google-Ads-for-cars engine. It also feeds sales (total loss) and service (post-repair alignments, ADAS calib).
+This is an **insurance-inbound + photo-estimate** lead engine, not a Google-Ads-for-cars engine. Cadillac has no collision shop of its own; this facility is the campus body shop. It also feeds sales (total loss) and service (post-repair alignments, ADAS calib). **Do not duplicate CCC** — orchestrate in front of it.
 
 ### 3.6 Commercial / fleet (B2B)
 
-[commercial.rickhendrickchevroletnorfolk.com](https://commercial.rickhendrickchevroletnorfolk.com/about)
+Platform is **Work Truck Solutions** (`commercial.rickhendrickchevroletnorfolk.com` / `rickhendrickchevroletnorfolk.worktrucksolutions.com`).
 
 | Item | Detail |
 |---|---|
 | Sales phone | **(757) 300-1588** |
-| Footer fleet phone | **(757) 760-8103** |
+| Footer fleet phone | **(757) 760-8103** (distinct from the 271-1678 cluster) |
+| Ignore | `(336) 814-9753` on some VDPs — platform tracking, not a Norfolk DID |
 | Named “Truck Pros” | Steve Ciccone, Nathan Preston, DJ Lord |
-| Offer | New/used work trucks, vans, specialty, **upfitting**, custom order, commercial service with priority scheduling |
+| Offer | Mixed-make work trucks/vans (Chevy plus Ford, Ram, GMC, etc.), upfits (Knapheide, Reading, Stahl, Utilimaster, BrightDrop), **Section 179 / bonus depreciation**, Autoguard F&I, commercial service with priority scheduling |
+| Capture | Per-unit Get Sale Price · Help Me Find (vocation dropdown: contractor, government, police, HVAC…) · EZOrder / customorders · Digital Commercial Catalog / VanBuilder |
 | Hours on microsite | Sales-like: M–F 9–8, Sat 9–6, last Sunday of month |
 
-Two fleet numbers = two lead owners or a tracking vs. direct split. Needs a human confirmation before CRM mapping.
+Two fleet numbers = two lead owners or a tracking vs. direct split. Needs a human confirmation before CRM mapping. Hendrick **Fast Pass** exists at group/Cadillac; Chevy Fast Pass URL was **not live-verified**.
 
 ### 3.7 EV as a marketing surface (not just a model line)
 
 [PlugShare location 47383](https://www.plugshare.com/location/47383): free public J1772 Level 2 at the store (showroom + service/Cadillac side). Historical CCS/DC fast under the Quick Lube sign appears **removed or broken** in later check-ins. Mixed reviews: “lifesaver / free” vs blocked stalls and dead hardware.
 
-This is unpaid **physical media** for EV shoppers and travelers on I-64/I-264. It currently generates goodwill *and* 1-star charging comments — an ops problem with marketing consequences.
+This is unpaid **physical media** for EV shoppers and travelers on I-64/I-264. It currently generates goodwill *and* 1-star charging comments — an ops problem with marketing consequences. HendrickCars sells Silverado EV / Blazer EV / Equinox EV; **Bolt as a current program is not stated** (only PlugShare comments). There is **no EV-department phone or form**.
 
 ---
 
@@ -541,6 +552,12 @@ flowchart LR
 - [Hendrick VA service hub](https://www.hendrickcars.com/service-virginia.htm)
 - [Collision center](https://www.hendrickcars.com/virginia/norfolk/rick-hendrick-chevrolet-collision-center.htm)
 - [Commercial about](https://commercial.rickhendrickchevroletnorfolk.com/about)
+- [Commercial home / Work Truck Solutions](https://commercial.rickhendrickchevroletnorfolk.com/)
+- [Section 179](https://commercial.rickhendrickchevroletnorfolk.com/p/tax-section-179)
+- [Carwise collision 550635](https://www.carwise.com/auto-body-shops/rick-hendrick-chevrolet-collision-norfolk-norfolk-va-23502/550635)
+- [Carwise photo estimate](https://www.carwise.com/online-photo-estimate/rick-hendrick-chevrolet-collision-norfolk-norfolk-va-23502/550635)
+- [GM Accessories BAC 164265](https://accessories.chevrolet.com/?bac=164265)
+- [Hendrick Performance (Charlotte — not this rooftop)](https://www.hendrickperformance.com/corvettes.aspx)
 - [Corvette C8 landing](https://www.rickhendrickchevroletnorfolk.com/new-corvette-c8-mid-engine-norfolk-va/)
 - [Oil-change SEO](https://www.rickhendrickchevroletnorfolk.com/service/service-and-parts-tips/oil-change-price/)
 - [DealerRater](https://www.dealerrater.com/dealer/Rick-Hendrick-Chevrolet-Norfolk-dealer-reviews-23389/)

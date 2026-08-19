@@ -31,8 +31,8 @@ flowchart TB
   end
 
   subgraph ADJ ["Adjacent P&Ls"]
-    COLL["Collision · 11 OEM certs · C8 · Sunbit · photo estimate"]
-    FLEET["Commercial · 757-300-1588 / 760-8103 · upfit"]
+    COLL["Collision · Carwise/CCC photo estimate · C8 cert · Sunbit"]
+    FLEET["Commercial · Work Truck Solutions · EZOrder · 300-1588 / 760-8103"]
     PARTS["GM OE / ACDelco counter"]
     EV["Free public L2 charge · ops inconsistency"]
   end
@@ -59,11 +59,12 @@ flowchart TB
 | 2 | Service Google/Waze number `(757) 544-9732` vs site pool `(757) 271-1678` | Attribution is currently soup |
 | 3 | Cadillac form leak on Chevy local listings | Demand handed to sister store |
 | 4 | Gubagoo chat + 10-second trade | Occupies the on-site conversation slot |
-| 5 | Collision photo estimate + `(757) 455-4505` | Insurance inbound, not retail ads |
+| 5 | Collision Carwise/CCC photo estimate + `(757) 455-4505` | Insurance inbound; Shop Assistant already exists — orchestrate, don’t duplicate |
 | 6 | CarGurus / iSeeCars listing completeness | 64% valid price+photo+miles |
-| 7 | Commercial phones and truck-pros desk | B2B is a different CRM object |
+| 7 | Work Truck Solutions EZOrder + two fleet phones | B2B is a different CRM object |
 | 8 | Marketplace + DealerRater + GBP replies | Shared-queue replies already misfire |
 | 9 | Google 4.7 / 9,506 vs Yelp ~2.3 / 165 | Review gating is working for Google and failing on Yelp |
+| 10 | Wholesale parts (real desk, no public portal) + GM Accessories BAC 164265 | Invisible B2B capture |
 
 ## Do not build yet
 
