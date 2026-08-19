@@ -165,7 +165,16 @@ sequenceDiagram
 
 **Failures (repeatable, high-severity):** vehicles sitting days/weeks after tow-in, RO not in the system, aggressive estimates vs. simple corrosion cleanup, missed appointment dates, poor callback. These are **process + CRM** problems, not awareness problems.
 
-**Reputation split:** DealerRater overall ~**4.6 / 732 reviews** (sales-heavy). Collision Google listing ~**4.0 / 467 reviews** (separate GBP). Service-only Google volume was **not** cleanly isolated from sales GBP.
+**Reputation split**
+
+| Surface | Score | Volume | Role |
+|---|---|---|---|
+| Google (sales GBP, via Places) | **4.7** | **9,506** | Primary Hendrick CSI destination; supports “#1 Google Rated” claim |
+| DealerRater | 4.6 | 732 | Sales + some service; Cars.com syndicates this |
+| Collision GBP | ~4.0 | ~467 | Separate brand / separate ask |
+| Yelp | **~2.3** | **165** | Untreated complaint sink (Apple Maps surfaces this) |
+
+Service-only Google volume is **not** cleanly isolated from the sales GBP. Yelp reviews already include the failure mode “I had an appointment and was told 48–72 hours before they could look at the car.” That is a scheduling-honesty problem, not an awareness problem.
 
 ### 2.5 Service competitive set (Hampton Roads)
 
@@ -215,6 +224,8 @@ Public third-party inventory is large and mixed-make (not a Chevy-only used lot)
 
 - CarGurus: **491 cars** listed
 - iSeeCars: **513 cars**, avg price ~$34k, avg miles ~52.6k, **3.5 / 5** dealer ops score (price + data quality). Only **64%** of listings have valid price + miles + photo vs 75% average — a **marketplace conversion leak**.
+- Autotrader dealer page exists at `/car-dealers/norfolk-va/100009/rick-hendrick-chevrolet-norfolk` (page was unavailable to fetch).
+- AutosToday: **350** cars shown on their scrape (different filter / freshness than CarGurus).
 
 Used specials: `/used-vehicles/used-vehicle-specials/`  
 Trade: `/value-your-trade/` branded **“10 Second Trade”** (Gubagoo). HendrickCars: they buy all makes/models.
@@ -320,8 +331,8 @@ flowchart TB
 | Corporate web | HendrickCars.com store + collision + VA service hub with UTMs | Duplicate listings vs rooftop site |
 | Commercial | Separate microsite + named truck team | Unclear if leads land in same CRM |
 | Marketplaces | CarGurus 491 · iSeeCars 513 · Cars.com reviews 817 · DealerRater 732 | Listing data quality below average |
-| Social | Facebook `facebook.com/ChevroletNorfolk/` · LinkedIn company page (47 followers, still lists `colonialchevroletnorfolk.com`) · YouTube handle referenced | Follower counts / cadence **unconfirmed** |
-| Reviews | DealerRater 4.6/732 · Cars.com 817 (includes DealerRater) · Capital One surfaces **4.7 Google** · Collision ~4.0/467 | Store claims “#1 Google Rated Chevy in Norfolk” — not independently counted here |
+| Social | Facebook [`chevroletnorfolk`](https://www.facebook.com/ChevroletNorfolk/) · Instagram [`@rickhendrickchevroletnorfolk`](https://www.instagram.com/rickhendrickchevroletnorfolk/) (active; follower count **unconfirmed**, search snippets say 1k+) · LinkedIn company page (47 followers, still lists `colonialchevroletnorfolk.com`) · YouTube handle referenced | Cadence and paid social mix unknown |
+| Reviews | **Google 4.7 / 9,506** (Capital One pulling Google Places) · DealerRater 4.6/732 · Cars.com ~816 (includes DealerRater) · AutosToday 4.5/5,698 · Collision GBP ~4.0/467 · **Yelp ~2.3 / 165** (Apple Maps) | Store claim “#1 Google Rated Chevy in Norfolk” is consistent with a very large Google volume. Yelp is the untreated complaint sink. |
 | Military | OEM program + Hendrick copy aimed at NAS Norfolk, Oceana, Langley-Eustis, Fort Story | Store-level military landing page **not fetched** |
 | Call tracking | See §5 | Attribution soup |
 
@@ -378,6 +389,7 @@ Public numbers attached to this rooftop (many are call-tracking, not DID):
 | (757) 455-4505 | Collision page | Collision |
 | (757) 916-5045 / 5048 | Older page scrapes | Retired tracking? |
 | (757) 216-1670 | Third-party directories | Unconfirmed |
+| (757) 266-5804 | Apple Maps | Another tracking or DID — unconfirmed |
 
 Until these are mapped to departments and to CRM lead sources, **no AI scoring model will be trustworthy**.
 
@@ -532,7 +544,10 @@ flowchart LR
 - [Corvette C8 landing](https://www.rickhendrickchevroletnorfolk.com/new-corvette-c8-mid-engine-norfolk-va/)
 - [Oil-change SEO](https://www.rickhendrickchevroletnorfolk.com/service/service-and-parts-tips/oil-change-price/)
 - [DealerRater](https://www.dealerrater.com/dealer/Rick-Hendrick-Chevrolet-Norfolk-dealer-reviews-23389/)
+- [Google rating via Capital One / Places](https://www.capitalone.com/cars/dealership/NORFOLK-VA/Rick+Hendrick+Chevrolet+VA/1959) (4.7 / 9,506)
 - [CarGurus dealer](https://www.cargurus.com/Cars/m-Rick-Hendrick-Chevrolet-Norfolk-sp267210)
+- Instagram: [rickhendrickchevroletnorfolk](https://www.instagram.com/rickhendrickchevroletnorfolk/)
+- Autotrader dealer id 100009
 - [iSeeCars dealer](https://www.iseecars.com/dealer-717056-rick-hendrick-chevrolet-norfolk-in-norfolk-va)
 - [PlugShare](https://www.plugshare.com/location/47383)
 - [GM Military Appreciation](https://www.gmmilitaryappreciation.com/)

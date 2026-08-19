@@ -63,6 +63,7 @@ flowchart TB
 | 6 | CarGurus / iSeeCars listing completeness | 64% valid price+photo+miles |
 | 7 | Commercial phones and truck-pros desk | B2B is a different CRM object |
 | 8 | Marketplace + DealerRater + GBP replies | Shared-queue replies already misfire |
+| 9 | Google 4.7 / 9,506 vs Yelp ~2.3 / 165 | Review gating is working for Google and failing on Yelp |
 
 ## Do not build yet
 
