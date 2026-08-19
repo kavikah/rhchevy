@@ -58,11 +58,12 @@ Service is the densest, most repeatable lead machine on the rooftop. It is also 
 | Item | Observed | Confidence |
 |---|---|---|
 | Location | 6252 E. Virginia Beach Blvd, Norfolk, VA 23502 | High |
-| Hours | Mon–Fri 7:30a–6:00p; Sat 8:00a–4:00p; Sun closed | High (Waze + local listings) |
-| Amenities claimed (Hendrick VA service page) | Loaners, pickup/drop-off, vehicle disinfectant, safety inspection | Medium (group page, not store-specific proof) |
-| Shuttle | Uber shuttle mentioned in customer reviews | High that it exists at least sometimes |
+| Hours | Mon–Fri 7:30a–6:00p; Sat **8:00a–4:00p or 5:00p** (listings conflict); Sun closed | Medium — Saturday close not confirmed on a live dealer hours page |
+| Amenities on the appointment form | Own ride, **wait in customer lounge**, or **shuttle** | High (Wayback of `serviceapptform`, Dec 2024) |
+| Loaners / pickup-dropoff | Hendrick Virginia *group* page only | **Unknown at this rooftop** |
+| Shuttle | Form option + reviews describing **Uber shuttle** (not a branded van) | High that it exists at least sometimes |
 | Quick lube | PlugShare users reference a “Quick Lube” sign at the service center | Medium |
-| Staff named in reviews | Advisors: Will, Grace, Alannah, Molly, Alex, Allan Herrera | Medium (public reviews, not org chart) |
+| Staff named in reviews | Advisors: Will, Grace, Alannah, Molly, Alex, Allan Herrera, Aaron | Medium (public reviews, not org chart) |
 
 ### 2.2 Capture points (the actual “leads”)
 
@@ -108,29 +109,30 @@ flowchart LR
 **Primary URLs**
 
 - Appointment form: [https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/](https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/)
-- Alias: `/schedule-service/`
+- Alias: `/schedule-service/` and `/service/schedule-service/`
 - Service home: `/service/`
-- Contact service: `/service/contact-service/`
-- Coupons: `/service/serviceandpartsspecials/`
-- SEO hub: `/service/service-and-parts-tips/` (oil-change price, EV jump-start, Chevy key fob, etc.)
+- Contact service: `/service/contact-service/` (name, email, phone, message, Referral ID, reCAPTCHA — Apr 2025 archive)
+- Coupons: `/service/serviceandpartsspecials/` — **print coupon, no alphanumeric codes**
+- SEO hub: `/service/service-and-parts-tips/` (oil-change price, how to check oil, EV jump-start, Chevy key fob, etc.)
 - Corporate referral: HendrickCars VA service page links the same form with  
   `utm_source=hendrickcars&utm_medium=referral&utm_campaign=service`
+- Service financing (group): Ally via HendrickCars
+- Legacy hostname: `colonialchevroletnorfolk.com` serves the same Dealer Inspire site
+
+**Scheduler UX (Wayback Dec 2024):** returning customer lookup by phone/email **or Google account sign-in** → new-customer year/make/model → services or free-text → transportation (ride / lounge / shuttle) → date/time slot. Capacity engine (Xtime vs CDK vs DI native) is **not confirmed**.
 
 **Services sold (from HendrickCars + SEO pages + reviews)**
 
-Oil/filter, tire rotation, brakes, batteries, alignments, diagnostics, recalls/software, factory scheduled maintenance, VA state inspection, HVAC, suspension, transmission service, Corvette (including ZR1) work, non-Chevy/GM work (reviewers mention it), fleet/commercial priority scheduling.
+Oil/filter (conventional, synthetic, OLM; diesel/synth called out as higher), tire rotation, brakes, batteries, alignments, diagnostics, recalls/software, factory scheduled maintenance, VA state inspection, HVAC, suspension, transmission, coolant, fuel injector, cabin filter, wipers, Corvette (including ZR1) work, all-makes copy, fleet/commercial priority scheduling.
 
-**Coupons observed on the specials module (snippets from SEO pages)**
+**Typical coupon menu (Wayback `/service/` 16 Oct 2025 — prices rotate)**
 
-- Battery testing (print coupon)
-- Free brake inspection
-- Free alignment check with any service
-- Fuel injector service
-- Lube, oil & filter
-- Tire rotation **$21.95**
-- Power steering service (Hendrick-branded offer; full price **unconfirmed**)
-
-Exact current oil-change package price was **not** verified first-party (Cloudflare block).
+- Evergreen: **free** battery test, **free** brake inspection, **free** alignment check with any service
+- 8-qt ACDelco dexos1 full synthetic + rotation **$119.95**; lube/oil/filter **$89.95** (Apr 2025 oil-change page)
+- Tire rotation + MPVI **$39.95** (rotation-only had been **$21.95**)
+- Fuel injector **$259.95**; power steering from **$179.95**; transmission from **$349**; cabin filter **$89.95**
+- GM/ACDelco rebates via [mycertifiedservicerebates.com](https://www.mycertifiedservicerebates.com/) (Visa gift card; national dates, not store codes)
+- SEO copy cites Chesapeake oil at **$25–$50**, then funnels into the $90–$120 dealer menu — they know the QSR price gap
 
 ### 2.3 Service customer journey
 
@@ -171,6 +173,7 @@ sequenceDiagram
 | Surface | Score | Volume | Role |
 |---|---|---|---|
 | Google (sales GBP, via Places) | **4.7** | **9,506** | Primary Hendrick CSI destination; supports “#1 Google Rated” claim |
+| Birdeye scrape of **Google service** listing | **4.8** | **367** | [Unclaimed Birdeye profile](https://reviews.birdeye.com/rick-hendrick-chevrolet-norfolk-service-167694268811493) |
 | DealerRater | 4.6 | 732 | Sales + some service; Cars.com syndicates this |
 | Collision GBP | ~4.0 | ~467 | Separate brand / separate ask |
 | Yelp | **~2.3** | **165** | Untreated complaint sink (Apple Maps surfaces this) |
@@ -181,9 +184,11 @@ Service-only Google volume is **not** cleanly isolated from the sales GBP. Yelp 
 
 | Competitor | Why they steal ROs |
 |---|---|
-| [Priority Chevrolet Greenbrier](https://www.prioritychevrolet.com/) (Chesapeake) | Same GM certified-service playbook; Sat service to **5pm** (vs Hendrick Sat to 4pm); explicit coupon codes on oil |
+| [Priority Chevrolet Greenbrier](https://www.prioritychevrolet.com/) (Chesapeake) | Same GM certified-service playbook; Sat service later than Hendrick on some listings; lounge/WiFi/kids area advertised; explicit coupon codes on oil |
 | [RK Chevrolet](https://www.rkchevrolet.com/) (Virginia Beach) | Geographic steal for VB/Oceanfront; **RK Express Lube**; night drop; shuttle (Mon–Fri, ~10 miles) |
-| Jiffy Lube / Take 5 / Firestone / Pep Boys | Price + no-appt convenience for oil/tires |
+| [Southern Chevrolet](https://www.southernchevroletrocks.com/) (Chesapeake) | **Free Uber/Lyft within 10 miles** — same amenity Hendrick customers already praise |
+| [Duke Chevrolet GMC](https://www.dukeauto.com/service/index.htm) (Suffolk) | Western Tidewater Chevy+GMC alternative |
+| Jiffy Lube / Take 5 / Firestone / Pep Boys / **Valvoline at 5101 Virginia Beach Blvd** | Price + no-appt convenience; Valvoline is in the same neighborhood |
 | Independents on the same boulevard | Mack's, Terry's, NAPA, Crash Champions — cheaper / faster for out-of-warranty |
 | Other Chevy rooftops | Customers explicitly say they pass a closer Chevy store because Hendrick advisors are better — **advisor brand is the moat** |
 
@@ -210,38 +215,50 @@ Service-only Google volume is **not** cleanly isolated from the sales GBP. Yelp 
 
 | Object | URL / channel |
 |---|---|
-| VDP / SRP inventory | `/new-vehicles/` |
+| VDP / SRP | `/new-vehicles/` — photos via **HomeNet**; sticky **Silverados** filter |
+| Custom/lifted trucks | `/custom-chevy-trucks-norfolk-va/`, `/custom-lifted-trucks/` |
 | New specials | `/new-vehicles/new-vehicle-specials/` |
-| Contact form | `/contactusform/` and `/contact-us/` |
-| Chat / text | Gubagoo widget (`cdn.gubagoo.io` on pages) |
-| Video intro from salesperson | DealerRater: Brady Roundtree sent a video after a web hit |
-| OEM / co-op offers | 0% APR 36 mo via GM Financial; 90-day payment defer; MSRP discounts; military program |
+| Get E-Price | Modal on VDPs: name, email, phone, message, Referral ID, reCAPTCHA |
+| Hendrick Price | Online price often requires **dealer-arranged financing** (**$1,000** discount on used VDPs) |
+| Test drive | Gravity Forms (name/email/phone/zip, daypart) |
+| Fast Pass | `/hendrick-fast-pass/` |
+| Chat / specials tray | Gubagoo (`cdn.gubagoo.io`) + “Start Chat” |
+| Video intro | DealerRater: Brady Roundtree after a web hit |
 
-**Hours (sales, HendrickCars):** Mon–Sat 9:00a–8:00p; Sunday closed (commercial microsite says last Sunday of month open).
+**Offer hygiene:** indexed homepage still had **0% APR 60 months on Silverado 1500**, 90-day deferral, GM Financial, delivery by **8/3/26** — that date is already past. Blogs still show **2025** APR legalese. **Do not let a bot quote expired APR.**
+
+**Hours conflict:** HendrickCars = Mon–Sat 9a–8p, **Sunday closed**. Dealer/Cars.com Silverado pages = Sunday **12p–6p**. Commercial = last Sunday of month. Confirm before publishing.
 
 ### 3.2 Used / CPO / buy-your-car
 
 Public third-party inventory is large and mixed-make (not a Chevy-only used lot):
 
-- CarGurus: **491 cars** listed
-- iSeeCars: **513 cars**, avg price ~$34k, avg miles ~52.6k, **3.5 / 5** dealer ops score (price + data quality). Only **64%** of listings have valid price + miles + photo vs 75% average — a **marketplace conversion leak**.
-- Autotrader dealer page exists at `/car-dealers/norfolk-va/100009/rick-hendrick-chevrolet-norfolk` (page was unavailable to fetch).
-- AutosToday: **350** cars shown on their scrape (different filter / freshness than CarGurus).
+- CarGurus: **491 cars** · DealerRater inventory **488** · iSeeCars: **513 cars**, avg price ~$34k, avg miles ~52.6k, **3.5 / 5** ops score. Only **64%** of listings have valid price + miles + photo vs 75% average — a **marketplace conversion leak**.
+- Autotrader dealer pages exist (`100009` and `64594`) but were unavailable to fetch.
+- TrueCar listings **do** appear for this store (e.g. new Trax).
+- AutosToday: **350** cars (stale/incomplete scrape).
+- **New vs used vs CPO split: unknown.**
+
+CPO SRP: `/used-vehicles/certified-pre-owned-vehicles/`  
+Budget: `/budget-buys/` (under $15k)
+
+Two cert layers on used VDPs: **Chevrolet CPO** and in-house **Hendrick Certified** (168-point, 12/12 high-tech, **10yr/100k powertrain**, roadside — shown even on non-Chevy, e.g. Ford Explorer). Many units are **Hendrick Transfer** from other rooftops (**~$300 fee**; some VDPs show Concord/Durham, NC).
 
 Used specials: `/used-vehicles/used-vehicle-specials/`  
-Trade: `/value-your-trade/` branded **“10 Second Trade”** (Gubagoo). HendrickCars: they buy all makes/models.
+Trade: `/value-your-trade/` branded **“10 Second Trade”**. HendrickCars: they buy all makes/models with no purchase required. Reviews complain trade value appears **after** paperwork — a conversion leak.
 
 ### 3.3 Finance & insurance
 
 | Object | Notes |
 |---|---|
-| Credit app | `/finance/apply-for-financing/` |
-| Finance SEO hub | `/finance/car-buying-tips/` (trade-in repair, used leases, unpaid trades) |
-| Captive | GM Financial required on several advertised APRs |
-| Military | HendrickCars: “dedicated programs for military personnel”; OEM overlay is [GM Military Appreciation](https://www.gmmilitaryappreciation.com/) via ID.me |
-| Collision financing | **Sunbit** on the collision page (not the Chevy finance page) |
-
-Homepage legal also referenced `gmmilitaryapp` — military is in the offer stack even if the store landing page was not fetched.
+| Credit app | `/finance/apply-for-financing/` + homepage “Get Pre-Approved in Seconds” |
+| Bad credit | Dedicated page `/bad-credit-car-loans/` (BK, repo, late pays — opposite funnel from 0% APR) |
+| Finance SEO hub | `/finance/car-buying-tips/` |
+| Captive | GM Financial required on advertised 0% / deferral |
+| Military / first-time / college | Name-dropped in disclaimers and HendrickCars FAQ; **no dedicated retail landing found** |
+| Autoguard | VSC, GAP, maintenance, oil program, tire/wheel, PDR — merchandised on **commercial** subdomain |
+| Collision financing | **Sunbit** |
+| Fee conflict | Commercial VDPs cite **$799** admin vs **$899** processing — canonical OTD table needed |
 
 ### 3.4 Parts
 
@@ -337,13 +354,13 @@ flowchart TB
 
 | Layer | What we know | Gap |
 |---|---|---|
-| Website | Dealer Inspire on `gm.websites.dealerinspire.com`; heavy SEO content; sticky Schedule Service + 10 Second Trade | Cloudflare-walled; form field map unknown |
-| Chat/trade | Gubagoo (footer/scripts on Corvette and research pages) | Chat transcripts not public |
+| Website | Dealer Inspire on `gm.websites.dealerinspire.com`; HomeNet photos; Gravity Forms test-drive; sticky Schedule Service + 10 Second Trade | Cloudflare-walled; inventory API needed, not HTML scrape |
+| Chat/trade | Gubagoo specials + Start Chat; 10 Second Trade vendor on `/value-your-trade/` **not live-verified** | RocketReach also lists CarNow MessageNow / Podium — **may be stale** |
 | Corporate web | HendrickCars.com store + collision + VA service hub with UTMs | Duplicate listings vs rooftop site |
-| Commercial | Separate microsite + named truck team | Unclear if leads land in same CRM |
-| Marketplaces | CarGurus 491 · iSeeCars 513 · Cars.com reviews 817 · DealerRater 732 | Listing data quality below average |
-| Social | Facebook [`chevroletnorfolk`](https://www.facebook.com/ChevroletNorfolk/) · Instagram [`@rickhendrickchevroletnorfolk`](https://www.instagram.com/rickhendrickchevroletnorfolk/) (active; follower count **unconfirmed**, search snippets say 1k+) · LinkedIn company page (47 followers, still lists `colonialchevroletnorfolk.com`) · YouTube handle referenced | Cadence and paid social mix unknown |
-| Reviews | **Google 4.7 / 9,506** (Capital One pulling Google Places) · DealerRater 4.6/732 · Cars.com ~816 (includes DealerRater) · AutosToday 4.5/5,698 · Collision GBP ~4.0/467 · **Yelp ~2.3 / 165** (Apple Maps) | Store claim “#1 Google Rated Chevy in Norfolk” is consistent with a very large Google volume. Yelp is the untreated complaint sink. |
+| Commercial | Work Truck Solutions microsite + named truck team | Unclear if leads land in same CRM |
+| Marketplaces | CarGurus 491 · iSeeCars 513 · DealerRater 488 · TrueCar listings exist · Cars.com dealer 5250023 (inventory fetch blocked; “Claim your store” still shown) | Listing completeness below average; new/used/CPO split unknown |
+| Social | Facebook [`chevroletnorfolk`](https://www.facebook.com/ChevroletNorfolk/) **7.4K followers**, 92% recommend / 1,444 reviews · Instagram [`@rickhendrickchevroletnorfolk`](https://www.instagram.com/rickhendrickchevroletnorfolk/) · TikTok `@rickhendrickchevy` · X `@HChevyNorfolk` · LinkedIn still lists `colonialchevroletnorfolk.com` | Paid social mix unknown; Messenger/IG leads not evidenced in the same queue as e-price |
+| Reviews | **Google 4.7 / 9,506** (Places) · Google *service* listing **4.8 / 367** (unclaimed Birdeye) · DealerRater 4.6/732 · Cars.com ~816 · **Yelp ~2.3 / 165** | Yelp is the untreated complaint sink; Birdeye service profile unclaimed |
 | Military | OEM program + Hendrick copy aimed at NAS Norfolk, Oceana, Langley-Eustis, Fort Story | Store-level military landing page **not fetched** |
 | Call tracking | See §5 | Attribution soup |
 
@@ -356,11 +373,17 @@ rickhendrickchevroletnorfolk.com
 ├── /new-vehicles/new-vehicle-specials/
 ├── /new-vehicles/{model}/     e.g. Camaro research CTAs
 ├── /new-corvette-c8-mid-engine-norfolk-va/
+├── /custom-chevy-trucks-norfolk-va/
+├── /custom-lifted-trucks/
 ├── /used-vehicles/
+├── /used-vehicles/certified-pre-owned-vehicles/
 ├── /used-vehicles/used-vehicle-specials/
+├── /budget-buys/
+├── /hendrick-fast-pass/
 ├── /chevy-research/           SEO
 ├── /finance/
 ├── /finance/apply-for-financing/
+├── /bad-credit-car-loans/
 ├── /finance/car-buying-tips/
 ├── /value-your-trade/         "10 Second Trade"
 ├── /contact-us/  /contactusform/
@@ -394,6 +417,7 @@ Public numbers attached to this rooftop (many are call-tracking, not DID):
 | (757) 544-9732 | Waze, CarHQ service listing | Service GBP / local pack |
 | (757) 544-9847 | HendrickCars FAQ | Store |
 | (855) 608-4343 | HendrickCars header | Corporate tracking |
+| (877) 213-8556 | HendrickCars location-details | Group sales tracking |
 | (833) 761-3956 | DealerRater | Sales tracking |
 | (757) 300-1588 | Commercial microsite | Fleet sales |
 | (757) 760-8103 | Site footer “Fleet” | Fleet / commercial |
@@ -535,9 +559,11 @@ flowchart LR
 
 1. **Listing & tracking cleanup** — Cadillac form leak, phone map, GBP split, iSeeCars photo/price completeness.
 2. **Service appointment reliability** — confirmations, no-shows, tow-in queue visibility (this is where 1-star reviews come from).
-3. **Advisor-branded retention** — the public already names Will, Alannah, Molly, Grace; productize that.
-4. **Collision photo-estimate → sales** for total loss.
-5. **Marketplace data quality** so CarGurus/iSeeCars stop taxing conversion.
+3. **Coupon vs QSR honesty.** Copy already admits $25–$50 oil vs ~$90–$120 dealer. Lead with free brake/alignment/battery inspections, not oil price wars.
+4. **Stale APR / fee table.** Indexed 0% APR delivery-by 8/3/26 is past; $799 vs $899 doc fees. A bot quoting either is a compliance problem.
+5. **Advisor-branded retention** — the public already names Will, Alannah, Molly, Grace; productize that.
+6. **Collision photo-estimate → sales** for total loss.
+7. **Marketplace data quality** so CarGurus/iSeeCars stop taxing conversion.
 
 **Do not do first**
 
@@ -562,7 +588,12 @@ flowchart LR
 - [GM Accessories BAC 164265](https://accessories.chevrolet.com/?bac=164265)
 - [Hendrick Performance (Charlotte — not this rooftop)](https://www.hendrickperformance.com/corvettes.aspx)
 - [Corvette C8 landing](https://www.rickhendrickchevroletnorfolk.com/new-corvette-c8-mid-engine-norfolk-va/)
-- [Oil-change SEO](https://www.rickhendrickchevroletnorfolk.com/service/service-and-parts-tips/oil-change-price/)
+- [Service hub archive Oct 2025](https://web.archive.org/web/20251016100907/https://www.rickhendrickchevroletnorfolk.com/service/)
+- [Appointment form archive Dec 2024](https://web.archive.org/web/20241203112857/https://www.rickhendrickchevroletnorfolk.com/service/serviceapptform/)
+- [Birdeye Google service listing](https://reviews.birdeye.com/rick-hendrick-chevrolet-norfolk-service-167694268811493)
+- [Bad-credit loans](https://www.rickhendrickchevroletnorfolk.com/bad-credit-car-loans/)
+- [Hendrick Fast Pass](https://www.rickhendrickchevroletnorfolk.com/hendrick-fast-pass/)
+- [Hendrick Autoguard](https://commercial.rickhendrickchevroletnorfolk.com/p/autoguard)
 - [DealerRater](https://www.dealerrater.com/dealer/Rick-Hendrick-Chevrolet-Norfolk-dealer-reviews-23389/)
 - [Google rating via Capital One / Places](https://www.capitalone.com/cars/dealership/NORFOLK-VA/Rick+Hendrick+Chevrolet+VA/1959) (4.7 / 9,506)
 - [CarGurus dealer](https://www.cargurus.com/Cars/m-Rick-Hendrick-Chevrolet-Norfolk-sp267210)

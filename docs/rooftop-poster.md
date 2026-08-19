@@ -65,6 +65,7 @@ flowchart TB
 | 8 | Marketplace + DealerRater + GBP replies | Shared-queue replies already misfire |
 | 9 | Google 4.7 / 9,506 vs Yelp ~2.3 / 165 | Review gating is working for Google and failing on Yelp |
 | 10 | Wholesale parts (real desk, no public portal) + GM Accessories BAC 164265 | Invisible B2B capture |
+| 11 | Get E-Price / Fast Pass / `/bad-credit-car-loans/` vs expired 0% APR banners | Finance-contingent price + stale offers = compliance risk for any bot |
 
 ## Do not build yet
 
