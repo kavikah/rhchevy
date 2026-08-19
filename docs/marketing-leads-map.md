@@ -469,6 +469,9 @@ stateDiagram-v2
 | DMS | Unknown (CDK vs Reynolds). Needed for RO, inventory, F&I | **Unknown** |
 | Reputation | DealerRater responses exist; at least one reply addressed **Land Rover Charlotte** on a Norfolk review — corporate or shared-queue response | Process gap |
 | Collision finance | Sunbit | **Known** |
+| Collision intake | Carwise + CCC photo estimate / book-appointment (shop 550635) | **Known** |
+| Commercial web | Work Truck Solutions (EZOrder, vocation RFQ) | **Known** |
+| Accessories e-comm | Chevrolet.com BAC 164265 | **Known** |
 | EV listing | PlugShare | **Known** |
 | Legacy domain | `colonialchevroletnorfolk.com` still resolves to this brand; LinkedIn still uses it | Hygiene gap |
 
